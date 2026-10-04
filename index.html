@@ -161,7 +161,7 @@ const choices=[...document.querySelectorAll(".choice")];
 const btn=document.getElementById("voteBtn");
 let selected="", hasVoted=false, apiAvailable=false;
 function getISOWeekKey(date=new Date()){const d=new Date(Date.UTC(date.getFullYear(),date.getMonth(),date.getDate()));const day=d.getUTCDay()||7;d.setUTCDate(d.getUTCDate()+4-day);const yearStart=new Date(Date.UTC(d.getUTCFullYear(),0,1));const week=Math.ceil((((d-yearStart)/86400000)+1)/7);return `${d.getUTCFullYear()}-W${String(week).padStart(2,"0")}`;}
-const WEEK_KEY=getISOWeekKey(), VOTED_KEY=`fc10voted_${WEEK_KEY}`, CHOICE_KEY=`fc10votechoice_${WEEK_KEY}`, FALLBACK_KEY=`fc10votes_${WEEK_KEY}`;
+const WEEK_KEY=getISOWeekKey(), VOTED_KEY=`fc10voted_v2_${WEEK_KEY}`, CHOICE_KEY=`fc10votechoice_v2_${WEEK_KEY}`, FALLBACK_KEY=`fc10votes_v2_${WEEK_KEY}`;
 function emptyVotes(){return {rebahan:0,kulineran:0,marathon:0,jalan:0};}
 function readFallback(){try{return {...emptyVotes(),...JSON.parse(localStorage.getItem(FALLBACK_KEY)||"{}")} }catch(e){return emptyVotes();}}
 function saveFallback(v){localStorage.setItem(FALLBACK_KEY,JSON.stringify(v));}
