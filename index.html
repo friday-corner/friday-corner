@@ -173,10 +173,11 @@ function getISOWeekKey(date=new Date()){
 }
 
 const WEEK_KEY=getISOWeekKey();
-const VOTED_KEY=`fc10voted_v2_${WEEK_KEY}`;
-const CHOICE_KEY=`fc10votechoice_v2_${WEEK_KEY}`;
-const FALLBACK_KEY=`fc10votes_v2_${WEEK_KEY}`;
-// Remove the old permanent flag from earlier versions so it cannot block this poll.
+const VOTED_KEY=`fc10voted_${WEEK_KEY}`;
+const CHOICE_KEY=`fc10votechoice_${WEEK_KEY}`;
+const FALLBACK_KEY=`fc10votes_${WEEK_KEY}`;
+
+// Bersihkan flag lama yang bersifat permanent agar tidak mengunci vote selamanya.
 try{localStorage.removeItem("fc10voted");}catch(e){}
 
 function emptyVotes(){return {rebahan:0,kulineran:0,marathon:0,jalan:0};}
@@ -215,7 +216,10 @@ function parseResults(payload){
       if(c)out[c]+=countValue(item.count??item.total??item.votes??item.value);
     });
   }else if(data&&typeof data==="object"){
-    Object.entries(data).forEach(([k,v])=>{const c=normalizeChoice(k);if(c)out[c]=countValue(v);});
+    Object.entries(data).forEach(([k,v])=>{
+      const c=normalizeChoice(k);
+      if(c)out[c]=countValue(v);
+    });
   }
   return out;
 }
@@ -235,7 +239,7 @@ function markVoted(choiceKey){
     selected=choiceKey;
     choices.forEach(c=>c.classList.toggle("selected",c.dataset.k===choiceKey));
   }
-  choices.forEach(c=>c.disabled=true);
+  choices.forEach(c=>c.setAttribute("aria-disabled","true"));
   btn.disabled=true;
   btn.textContent="✓ YOU'VE VOTED THIS WEEK";
 }
@@ -247,31 +251,70 @@ choices.forEach(c=>c.addEventListener("click",()=>{
   btn.disabled=false;
   btn.textContent="VOTE: "+c.querySelector("strong").textContent.toUpperCase()+" →";
 }));
+
+async function getApiResults(){
+  const response=await fetch(API_URL+"?action=results&_="+Date.now(),{cache:"no-store"});
+  if(!response.ok)throw new Error("API status "+response.status);
+  const data=parseResults(await response.json());
+  return data;
+}
+
+async function refreshResults(){
+  const data=await getApiResults();
+  render(data);
+  return data;
+}
+
 async function load(){
   const fallback=readFallback();
+  // Selalu tampilkan 0% / fallback dulu agar area hasil tidak pernah kosong.
   render(fallback);
   const saved=localStorage.getItem(VOTED_KEY)==="1";
   if(saved)markVoted(localStorage.getItem(CHOICE_KEY)||"");
   try{
-    const response=await fetch(API_URL+"?action=results",{cache:"no-store"});
-    if(!response.ok)throw new Error("API status "+response.status);
-    render(parseResults(await response.json()));
-  }catch(e){render(fallback);}
+    await refreshResults();
+  }catch(e){
+    render(fallback);
+  }
 }
+
 btn.addEventListener("click",async()=>{
   if(!selected||hasVoted)return;
+
+  const votedChoice=selected;
   const fallback=readFallback();
-  fallback[selected]=(fallback[selected]||0)+1;
+  fallback[votedChoice]=(fallback[votedChoice]||0)+1;
   saveFallback(fallback);
-  // Optimistic UI: results and voted state change immediately.
+
+  // Optimistic UI: langsung berubah tanpa menunggu API.
   localStorage.setItem(VOTED_KEY,"1");
-  localStorage.setItem(CHOICE_KEY,selected);
+  localStorage.setItem(CHOICE_KEY,votedChoice);
   render(fallback);
-  markVoted(selected);
+  markVoted(votedChoice);
+
   try{
-    await fetch(API_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/x-www-form-urlencoded;charset=UTF-8"},body:"choice="+encodeURIComponent(selected)});
-  }catch(e){/* local weekly fallback remains */}
+    // POST tetap menjadi sumber penambahan vote bersama (server-side).
+    await fetch(API_URL,{
+      method:"POST",
+      mode:"no-cors",
+      headers:{"Content-Type":"application/x-www-form-urlencoded;charset=UTF-8"},
+      body:"choice="+encodeURIComponent(votedChoice)
+    });
+
+    // Ambil ulang hasil AGREGAT dari API. Jadi persentase/total yang tampil
+    // berasal dari seluruh vote, bukan hanya vote di browser ini.
+    let latest=null;
+    for(let attempt=0;attempt<3;attempt++){
+      if(attempt)await new Promise(r=>setTimeout(r,500));
+      try{latest=await refreshResults();break;}catch(e){}
+    }
+    if(!latest)render(fallback);
+  }catch(e){
+    // Jika API benar-benar tidak bisa diakses, fallback mingguan tetap dipakai.
+    render(fallback);
+  }
 });
+
 load();
 </script>
 </body></html>
