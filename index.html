@@ -3,167 +3,142 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Friday Corner — A little break</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<title>Friday Corner — V7</title>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
 :root{
- --ink:#191a18;--ink2:#242622;--paper:#eeece5;--paper2:#e4e1d7;
- --olive:#7f866c;--olive2:#9ba184;--sand:#c8c1b1;--muted:#777970;
- --line:rgba(25,26,24,.14);--white:#f7f6f1;
+  --ink:#20211f; --paper:#f5f1e8; --cream:#fbf9f4; --sage:#87947a;
+  --olive:#5e6b54; --clay:#b86f52; --line:#d9d2c4; --muted:#74766f;
 }
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif}
-a{text-decoration:none;color:inherit}.page{overflow:hidden}
-.top{position:fixed;z-index:30;top:0;left:0;right:0;height:72px;padding:0 5vw;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(to bottom,rgba(238,236,229,.94),transparent);backdrop-filter:blur(8px)}
-.brand{font-family:Manrope;font-weight:800;letter-spacing:.14em;font-size:12px}.brand i{font-style:normal;color:var(--olive)}
-.nav{display:flex;gap:25px;font-size:11px;color:#565851;text-transform:uppercase;letter-spacing:.12em}.nav a:hover{color:var(--ink)}
-.hero{height:100svh;min-height:650px;padding:130px 5vw 65px;display:flex;align-items:flex-end;position:relative;background:var(--paper)}
-.hero:before{content:"";position:absolute;width:65vw;height:65vw;max-width:900px;max-height:900px;border-radius:50%;right:-18vw;top:-25vw;background:radial-gradient(circle,#c9c8b8 0,#dedbd1 38%,transparent 68%);opacity:.65}
-.hero:after{content:"";position:absolute;width:1px;height:45%;right:14%;top:22%;background:var(--line)}
-.hero-content{position:relative;z-index:2;width:100%}.eyebrow{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--olive);font-weight:700}
-.hero h1{font-family:Manrope;font-size:clamp(86px,16vw,225px);line-height:.76;letter-spacing:-.095em;margin:18px 0 42px;font-weight:800}
-.hero h1 span{font-weight:500;color:transparent;-webkit-text-stroke:1px var(--ink)}
-.hero-bottom{display:flex;justify-content:space-between;align-items:end}.hero-copy{font-size:13px;line-height:1.7;color:#64665f;max-width:370px}.hero-date{text-align:right;font-family:Manrope;font-size:13px;letter-spacing:.08em}.hero-date strong{display:block;font-size:42px;letter-spacing:-.06em}
-.scroll{position:absolute;bottom:70px;left:50%;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#85877f;animation:bob 2s ease-in-out infinite}
-@keyframes bob{50%{transform:translateY(7px)}}
-.section{padding:120px 5vw}.wrap{max-width:1180px;margin:auto}.dark{background:var(--ink);color:var(--white)}.dark .eyebrow{color:var(--olive2)}
-.story{display:grid;grid-template-columns:.72fr 1.28fr;gap:6vw;align-items:center}.story h2,.music h2,.movies h2,.fun h2{font-family:Manrope;font-weight:800;letter-spacing:-.08em;line-height:.83;margin:18px 0}
-.story h2{font-size:clamp(60px,8vw,115px)}.story h2 span{color:var(--olive)}
-.story-copy{font-size:14px;color:#70726b;line-height:1.8;max-width:390px}.dark .story-copy{color:#a0a29a}
-.name{margin-top:35px;font-size:11px;letter-spacing:.18em;text-transform:uppercase}
-.photo{height:min(78vh,720px);min-height:500px;position:relative;overflow:hidden;background:linear-gradient(145deg,#c9c2b5,#817f70 42%,#383b34 43%,#20221f)}
-.photo:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 33%,#d5ae8c 0 8%,transparent 8.5%),radial-gradient(ellipse at 50% 53%,#805d49 0 20%,transparent 20.5%),linear-gradient(100deg,transparent 35%,#1d201c 35% 65%,transparent 65%);opacity:.9}
-.photo:after{content:"BEST INSPIRATION";position:absolute;left:0;bottom:0;padding:14px 18px;background:var(--olive);color:white;font-size:9px;letter-spacing:.2em;font-weight:700}
-.photo-label{position:absolute;right:22px;top:22px;border:1px solid #fff7;color:white;padding:10px;font-size:9px;letter-spacing:.17em;z-index:2}
-.music-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:7vw;align-items:center}.music h2{font-size:clamp(70px,9vw,135px)}.music p{max-width:360px;color:#a2a49c;font-size:13px;line-height:1.8}
-.player{height:510px;background:#2b2d28;position:relative;padding:34px;overflow:hidden;display:flex;align-items:flex-end}.player-art{position:absolute;inset:0;background:linear-gradient(145deg,#777d65,#b5b29d 48%,#44473f);opacity:.85}.disc{position:absolute;width:410px;height:410px;border-radius:50%;right:-80px;top:40px;background:repeating-radial-gradient(circle,#151714 0 2px,#20231e 3px 5px);box-shadow:0 25px 60px #0008}.player-info{position:relative;z-index:2}.player-info small{text-transform:uppercase;letter-spacing:.2em;color:#d8d9d0;font-size:9px}.player-info h3{font-family:Manrope;font-size:50px;line-height:.9;margin:8px 0;letter-spacing:-.06em}.play{width:55px;height:55px;border-radius:50%;display:grid;place-items:center;background:var(--paper);color:var(--ink);margin-top:18px}
-.playlist{margin-top:60px;border-top:1px solid #41433e}.song{display:grid;grid-template-columns:45px 1fr auto;align-items:center;padding:20px 0;border-bottom:1px solid #41433e}.song small{display:block;color:#8d9088;margin-top:5px}.song em{font-style:normal;color:#777a72;font-size:10px}.song:hover b{color:var(--olive2)}
-.movies{background:var(--paper2)}.movie-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:50px}.movies h2{font-size:clamp(70px,9vw,135px)}.movie-head p{max-width:280px;color:#6f716b;font-size:13px;line-height:1.7}.reel{display:flex;gap:18px;overflow-x:auto;padding-bottom:25px;scrollbar-width:none}.reel::-webkit-scrollbar{display:none}.poster{flex:0 0 min(29vw,350px);height:min(67vh,590px);position:relative;overflow:hidden;padding:25px;display:flex;align-items:flex-end;transition:.45s}.poster:hover{transform:translateY(-10px)}.poster:before{content:"";position:absolute;inset:0;background:linear-gradient(transparent 30%,#111b)}
-.p1{background:linear-gradient(145deg,#243447,#a4a69a 50%,#56544c)}.p2{background:linear-gradient(145deg,#b99567,#c86d57 48%,#4c4039)}.p3{background:linear-gradient(145deg,#bfc1b7,#6f7b6e 50%,#323630)}.p4{background:linear-gradient(145deg,#c6a693,#7d6b82 50%,#302c3c)}
-.poster-text{position:relative;z-index:2;color:white}.poster-text small{font-size:9px;text-transform:uppercase;letter-spacing:.2em}.poster h3{font-family:Manrope;font-size:43px;line-height:.82;letter-spacing:-.07em;margin:9px 0}.poster p{font-size:11px;color:#ddd;line-height:1.5}
-.watch{display:inline-block;margin-top:14px;border:1px solid #fff7;padding:9px 12px;font-size:9px;letter-spacing:.15em;text-transform:uppercase}
-.fun{background:var(--olive);color:#f6f5ef}.fun .eyebrow{color:#dcded3}.fun h2{font-size:clamp(70px,10vw,145px)}.question{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #d9d9d0;border-bottom:1px solid #d9d9d0}.question-title{font-family:Manrope;font-size:clamp(28px,4vw,53px);letter-spacing:-.06em;line-height:.95;padding:40px 0}.answers{display:grid;grid-template-columns:1fr 1fr}.answers button{border:0;border-left:1px solid #d9d9d0;background:transparent;color:#f6f5ef;font:inherit;font-size:11px;letter-spacing:.05em;padding:25px;text-align:left;cursor:pointer}.answers button:hover,.answers button.active{background:#f0eee7;color:var(--ink)}
-.results{margin-top:55px;display:none}.results.show{display:block}.result-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:20px}.result-head strong{font-family:Manrope;font-size:26px}.result-head span{font-size:10px;letter-spacing:.12em;text-transform:uppercase}.bar{margin:18px 0}.bar-top{display:flex;justify-content:space-between;font-size:11px;margin-bottom:7px}.track{height:7px;background:#6e755f;border-radius:99px;overflow:hidden}.fill{height:100%;width:0;background:#f3f1e9;border-radius:99px;transition:width 1s ease}
-.end{min-height:48vh;background:var(--ink);color:white;display:grid;place-items:center;text-align:center;padding:70px 20px}.end h2{font-family:Manrope;font-size:clamp(60px,10vw,145px);line-height:.78;letter-spacing:-.09em;margin:15px 0}.end h2 span{color:var(--olive2)}.end p{color:#777a72;font-size:12px}
-@media(max-width:800px){
- .nav{display:none}.hero{padding:120px 6vw 55px}.hero h1{font-size:25vw}.hero:after{display:none}.hero-bottom{display:block}.hero-date{text-align:left;margin-top:28px}.scroll{display:none}
- .section{padding:90px 6vw}.story,.music-grid{grid-template-columns:1fr}.story{gap:40px}.photo{min-height:430px;height:65vh}.player{height:430px}.movies h2{font-size:23vw}.movie-head{display:block}.movie-head p{margin-top:25px}.poster{flex-basis:72vw}.question{grid-template-columns:1fr}.answers button{border-left:0;border-top:1px solid #d9d9d0}.results{margin-top:45px}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif}
+a{text-decoration:none;color:inherit}.wrap{max-width:1180px;margin:auto;padding:0 28px}
+.top{height:68px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+.logo{font-weight:700;letter-spacing:.14em;font-size:13px}.date{font-size:12px;color:var(--muted)}
+.hero{padding:76px 0 54px;display:grid;grid-template-columns:1.4fr .8fr;gap:50px;align-items:end}
+.kicker{font-size:12px;text-transform:uppercase;letter-spacing:.18em;color:var(--olive);font-weight:700}
+h1{font-family:"Playfair Display",serif;font-size:clamp(64px,11vw,142px);line-height:.78;margin:18px 0 28px;letter-spacing:-.07em}
+.hero p{max-width:560px;font-size:18px;line-height:1.65;color:#55574f;margin:0}
+.stamp{justify-self:end;border:1px solid var(--ink);border-radius:50%;width:145px;height:145px;display:grid;place-items:center;text-align:center;font-size:11px;line-height:1.5;transform:rotate(8deg)}
+.stamp b{font-size:18px;display:block}
+.ticker{background:var(--ink);color:var(--cream);overflow:hidden}
+.ticker-in{white-space:nowrap;padding:13px 0;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.ticker-in span{margin-right:55px}.dot{color:#b5c2a9}
+.grid{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;margin:28px 0}
+.card{background:var(--cream);border:1px solid var(--line);padding:30px;border-radius:4px}
+.card.dark{background:var(--olive);color:white;border-color:var(--olive)}
+.card h2{font-family:"Playfair Display",serif;font-size:36px;margin:10px 0 12px;line-height:1}
+.card p{line-height:1.6;color:#65665f}.dark p{color:#e7eadf}
+.label{font-size:11px;letter-spacing:.15em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.dark .label{color:#dce4d3}
+.person{display:flex;gap:22px;align-items:center;margin-top:26px}
+.avatar{width:76px;height:76px;border-radius:50%;background:#d9d1c1;display:grid;place-items:center;font-family:"Playfair Display";font-size:28px}
+.quote{font-family:"Playfair Display";font-size:25px;line-height:1.3}
+.btn{display:inline-flex;padding:12px 16px;background:var(--ink);color:white;font-size:12px;font-weight:700;margin-top:18px;border-radius:2px}
+.dark .btn{background:#f5f1e8;color:var(--ink)}
+.mini{display:flex;justify-content:space-between;gap:20px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.2)}
+.mini:last-child{border:0}.mini b{font-size:14px}.mini small{color:#d9dfd4}
+.section{padding:54px 0 20px}.section-head{display:flex;justify-content:space-between;align-items:end;border-bottom:1px solid var(--ink);padding-bottom:14px}
+.section-head h2{font-family:"Playfair Display";font-size:40px;margin:0}.section-head span{font-size:12px;color:var(--muted)}
+.music{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+.track{padding:22px;background:var(--cream);border:1px solid var(--line);min-height:145px;display:flex;flex-direction:column;justify-content:space-between}
+.track .num{font-family:"Playfair Display";font-size:42px;color:#c9c1b2}.track h3{margin:4px 0;font-size:17px}.track p{margin:0;color:var(--muted);font-size:13px}
+.movies{display:grid;grid-template-columns:2fr 1fr 1fr;gap:14px;margin-top:18px}
+.movie{min-height:310px;padding:25px;display:flex;flex-direction:column;justify-content:flex-end;background:#ded8ca;position:relative;overflow:hidden}
+.movie:before{content:"";position:absolute;inset:0;background:linear-gradient(transparent 35%,rgba(25,26,23,.72))}
+.movie>*{position:relative;color:white}.movie.big{background:#68735f}.movie:nth-child(2){background:#b77c61}.movie:nth-child(3){background:#7d8179}
+.movie h3{font-family:"Playfair Display";font-size:31px;margin:6px 0}.movie p{font-size:12px;margin:0;opacity:.9}
+.poll{margin-top:18px;background:var(--ink);color:white;padding:34px;border-radius:4px;display:grid;grid-template-columns:1fr 1.4fr;gap:45px}
+.poll h2{font-family:"Playfair Display";font-size:42px;margin:8px 0}.poll p{color:#c9ccc5;line-height:1.5}
+.choices{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-content:center}
+.choice{border:1px solid #4b4d48;background:transparent;color:white;padding:17px;text-align:left;cursor:pointer;font:inherit;transition:.2s}
+.choice:hover{background:#343631}.choice.selected{background:#d9e0d0;color:var(--ink);border-color:#d9e0d0}
+.results{grid-column:1/-1;margin-top:10px}.bar{display:grid;grid-template-columns:105px 1fr 45px;gap:10px;align-items:center;margin:10px 0;font-size:12px}.trackbar{height:7px;background:#3a3c38}.fill{height:100%;background:#b7c3aa;width:0;transition:.5s}
+footer{margin-top:70px;padding:35px 0 50px;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}
+@media(max-width:760px){
+ .hero,.grid,.poll{grid-template-columns:1fr}.stamp{justify-self:start}.music,.movies{grid-template-columns:1fr}
+ .movies .movie{min-height:230px}.choices{grid-template-columns:1fr}.wrap{padding:0 18px}
+ h1{font-size:76px}.hero{padding-top:55px}
 }
 </style>
 </head>
 <body>
-<header class="top">
- <a class="brand" href="#">FRIDAY <i>/</i> CORNER</a>
- <nav class="nav"><a href="#shoutout">Shoutout</a><a href="#music">Music</a><a href="#movies">Movies</a><a href="#fun">Poll</a></nav>
-</header>
+<header class="wrap top"><div class="logo">FRIDAY / CORNER</div><div class="date">A little pause before the weekend.</div></header>
 
 <main>
-<section class="hero">
- <div class="hero-content">
-  <div class="eyebrow">Customer Care · Every Friday</div>
-  <h1>FRI<span>DAY</span></h1>
-  <div class="hero-bottom">
-   <div class="hero-copy">Ruang kecil untuk apresiasi, musik, film, dan sedikit hiburan.<br><b>Tanpa tugas tambahan.</b></div>
-   <div class="hero-date"><strong>WEEKEND</strong>starts here.</div>
-  </div>
- </div>
- <div class="scroll">scroll to explore ↓</div>
+<section class="wrap hero">
+  <div><div class="kicker">Weekly office corner · issue 07</div><h1>FRIDAY.</h1><p>Bukan pengumuman. Bukan tugas tambahan. Cuma satu halaman kecil buat berhenti sebentar, lihat hal seru minggu ini, dan pulang dengan mood yang sedikit lebih baik.</p></div>
+  <div class="stamp"><div><b>TAKE<br>A BREAK</b><br>YOU'VE EARNED IT<br>✦ THIS FRIDAY ✦</div></div>
 </section>
 
-<section class="section" id="shoutout">
- <div class="wrap story">
-  <div>
-   <div class="eyebrow">01 — Best Inspiration</div>
-   <h2>GOOD<br>PEOPLE<br><span>MATTER.</span></h2>
-   <p class="story-copy">Minggu ini, kita kasih ruang untuk satu orang yang memberi energi positif. Sederhana, tapi layak diapresiasi.</p>
-   <div class="name">Eny Mei Ranti · Friday Spotlight</div>
-   <a class="watch" style="display:inline-block;border-color:#8b8d83;color:#555;margin-top:25px" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSeaWh58P_A2-EhlVESJzN04-r_ysEDsQm49aqCVTVCSkJFp4g/viewform">Give a shoutout ↗</a>
-  </div>
-  <div class="photo"><div class="photo-label">BEST / INSPIRATION / 01</div></div>
- </div>
+<div class="ticker"><div class="wrap ticker-in"><span>GOOD PEOPLE MATTER <i class="dot">✦</i></span><span>SMALL WINS COUNT <i class="dot">✦</i></span><span>HAPPY FRIDAY <i class="dot">✦</i></span><span>GOOD PEOPLE MATTER <i class="dot">✦</i></span></div></div>
+
+<section class="wrap grid">
+  <article class="card">
+    <div class="label">01 · Best Inspiration</div>
+    <h2>Orang baik<br>layak disebut.</h2>
+    <div class="person"><div class="avatar">E</div><div><div class="quote">“Eny Mei Ranti”</div><div style="color:var(--muted);font-size:12px;margin-top:5px">Best Inspiration this week</div></div></div>
+    <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSeaWh58P_A2-EhlVESjZsN04-r_ysEDsQm49aqCVTVCSkJFp4g/viewform" target="_blank">KIRIM SHOUTOUT →</a>
+  </article>
+  <article class="card dark">
+    <div class="label">02 · This Week</div><h2>Three tiny<br>good things.</h2>
+    <div class="mini"><b>01 / Kerja sama</b><small>keep it going</small></div>
+    <div class="mini"><b>02 / Saling bantu</b><small>makes it lighter</small></div>
+    <div class="mini"><b>03 / Tetap waras</b><small>most important</small></div>
+  </article>
 </section>
 
-<section class="section dark" id="music">
- <div class="wrap">
-  <div class="music-grid">
-   <div><div class="eyebrow">02 — Friday Soundtrack</div><h2>PRESS<br>PLAY.</h2><p>Playlist pilihan buat nemenin perjalanan pulang, closing, atau sekadar memperbaiki mood Jumat.</p></div>
-   <div class="player"><div class="player-art"></div><div class="disc"></div><div class="player-info"><small>Now playing · Friday pick</small><h3>Golden</h3><div>Harry Styles · feel good</div><a class="play" target="_blank" href="https://www.youtube.com/results?search_query=Golden+Harry+Styles">▶</a></div></div>
-  </div>
-  <div class="playlist">
-   <a class="song" target="_blank" href="https://www.youtube.com/results?search_query=Golden+Harry+Styles"><span>01</span><div><b>Golden</b><small>Harry Styles</small></div><em>03:28 ↗</em></a>
-   <a class="song" target="_blank" href="https://www.youtube.com/results?search_query=End+of+Beginning+Djo"><span>02</span><div><b>End of Beginning</b><small>Djo</small></div><em>02:39 ↗</em></a>
-   <a class="song" target="_blank" href="https://www.youtube.com/results?search_query=Sunday+Best+Surfaces"><span>03</span><div><b>Sunday Best</b><small>Surfaces</small></div><em>02:38 ↗</em></a>
-  </div>
+<section class="wrap section">
+ <div class="section-head"><h2>Press Play</h2><span>soundtrack buat perjalanan pulang</span></div>
+ <div class="music">
+  <div class="track"><div class="num">01</div><div><h3>Golden</h3><p>Harry Styles</p></div></div>
+  <div class="track"><div class="num">02</div><div><h3>End of Beginning</h3><p>Djo</p></div></div>
+  <div class="track"><div class="num">03</div><div><h3>Sunday Best</h3><p>Surfaces</p></div></div>
  </div>
 </section>
 
-<section class="section movies" id="movies">
- <div class="wrap">
-  <div class="movie-head"><div><div class="eyebrow">03 — Movie Corner</div><h2>WATCH<br>THIS.</h2></div><p>Weekend picks untuk yang mau rebahan, ketawa, mikir, atau sekadar ditemani cerita bagus.</p></div>
-  <div class="reel">
-   <article class="poster p1"><div class="poster-text"><small>Sci-Fi · Epic</small><h3>INTER<br>STELLAR</h3><p>Untuk yang mau pulang dari film sambil bengong.</p><a class="watch" target="_blank" href="https://www.youtube.com/results?search_query=Interstellar+trailer">Trailer ↗</a></div></article>
-   <article class="poster p2"><div class="poster-text"><small>Animation · Warm</small><h3>RATA<br>TOUILLE</h3><p>Comfort movie yang nggak pernah salah.</p><a class="watch" target="_blank" href="https://www.youtube.com/results?search_query=Ratatouille+trailer">Trailer ↗</a></div></article>
-   <article class="poster p3"><div class="poster-text"><small>Comedy · Inspiring</small><h3>THE<br>INTERN</h3><p>Ringan, hangat, dan cocok buat weekend.</p><a class="watch" target="_blank" href="https://www.youtube.com/results?search_query=The+Intern+trailer">Trailer ↗</a></div></article>
-   <article class="poster p4"><div class="poster-text"><small>Romance · Feel Good</small><h3>ABOUT<br>TIME</h3><p>Film tentang menghargai hal-hal sederhana.</p><a class="watch" target="_blank" href="https://www.youtube.com/results?search_query=About+Time+trailer">Trailer ↗</a></div></article>
-  </div>
+<section class="wrap section">
+ <div class="section-head"><h2>Watch This</h2><span>3 pilihan buat malam santai</span></div>
+ <div class="movies">
+  <a class="movie big" href="https://www.youtube.com/results?search_query=Interstellar+official+trailer" target="_blank"><div class="label">01 · Sci-fi</div><h3>Interstellar</h3><p>Kalau mau nonton yang bikin mikir.</p></a>
+  <a class="movie" href="https://www.youtube.com/results?search_query=Ratatouille+official+trailer" target="_blank"><div class="label">02 · Feel good</div><h3>Ratatouille</h3><p>Comfort movie.</p></a>
+  <a class="movie" href="https://www.youtube.com/results?search_query=The+Intern+official+trailer" target="_blank"><div class="label">03 · Easy watch</div><h3>The Intern</h3><p>Ringan, hangat, enak.</p></a>
  </div>
 </section>
 
-<section class="section fun" id="fun">
- <div class="wrap">
-  <div class="eyebrow">04 — Your Weekend</div>
-  <h2>WHAT'S<br>THE MOOD?</h2>
-  <div class="question">
-   <div class="question-title">Besok libur.<br>Mode kamu apa?</div>
-   <div class="answers">
-    <button data-key="rebahan" onclick="vote('rebahan',this)">😴 REBAHAN</button>
-    <button data-key="kulineran" onclick="vote('kulineran',this)">🍜 KULINERAN</button>
-    <button data-key="marathon" onclick="vote('marathon',this)">🎬 MARATHON</button>
-    <button data-key="jalan" onclick="vote('jalan',this)">🚗 JALAN-JALAN</button>
-   </div>
+<section class="wrap section">
+ <div class="section-head"><h2>Friday Question</h2><span>1 klik · no form · no pressure</span></div>
+ <div class="poll">
+  <div><div class="label">Weekend mode</div><h2>Besok paling<br>mau ngapain?</h2><p>Pilih satu. Hasilnya bakal dikumpulkan dan ditampilkan di sini.</p></div>
+  <div class="choices">
+   <button class="choice" onclick="vote('rebahan',this)">🛋️ Rebahan total</button>
+   <button class="choice" onclick="vote('kulineran',this)">🍜 Kulineran</button>
+   <button class="choice" onclick="vote('marathon',this)">🎬 Marathon film</button>
+   <button class="choice" onclick="vote('jalan',this)">🚶 Jalan-jalan</button>
   </div>
-  <div class="results" id="results">
-   <div class="result-head"><strong>This Friday's mood</strong><span id="total">0 people voted</span></div>
-   <div class="bar"><div class="bar-top"><span>😴 Rebahan</span><b id="n-rebahan">0%</b></div><div class="track"><div class="fill" id="f-rebahan"></div></div></div>
-   <div class="bar"><div class="bar-top"><span>🍜 Kulineran</span><b id="n-kulineran">0%</b></div><div class="track"><div class="fill" id="f-kulineran"></div></div></div>
-   <div class="bar"><div class="bar-top"><span>🎬 Marathon</span><b id="n-marathon">0%</b></div><div class="track"><div class="fill" id="f-marathon"></div></div></div>
-   <div class="bar"><div class="bar-top"><span>🚗 Jalan-jalan</span><b id="n-jalan">0%</b></div><div class="track"><div class="fill" id="f-jalan"></div></div></div>
-  </div>
+  <div class="results" id="results"></div>
  </div>
 </section>
-
-<section class="end"><div><div class="eyebrow">05 — See you next Friday</div><h2>SAME PEOPLE.<br><span>NEW FRIDAY.</span></h2><p>Friday Corner · updated weekly</p></div></section>
 </main>
 
-<script>
-/*
-  POLLING:
-  Saat ini demo menggunakan localStorage agar bisa dites langsung.
-  Untuk akumulasi seluruh karyawan, hubungkan fungsi vote() ke Google Apps Script.
-  Struktur data sudah disiapkan agar mudah diganti.
-*/
-const defaultVotes={rebahan:18,kulineran:12,marathon:8,jalan:6};
-let votes=JSON.parse(localStorage.getItem('fridayVotes')||'null')||defaultVotes;
+<footer class="wrap"><span>FRIDAY / CORNER — made for a lighter Friday.</span><span>Same people. New Friday.</span></footer>
 
-function vote(key,btn){
- if(localStorage.getItem('fridayHasVoted')==='1'){render();return}
- votes[key]=(votes[key]||0)+1;
- localStorage.setItem('fridayVotes',JSON.stringify(votes));
- localStorage.setItem('fridayHasVoted','1');
- document.querySelectorAll('.answers button').forEach(x=>x.classList.remove('active'));
- btn.classList.add('active');
- render();
+<script>
+const options={rebahan:'Rebahan',kulineran:'Kulineran',marathon:'Marathon film',jalan:'Jalan-jalan'};
+let votes=JSON.parse(localStorage.getItem('fridayVotesV7')||'{"rebahan":0,"kulineran":0,"marathon":0,"jalan":0}');
+function vote(k,b){
+  if(localStorage.getItem('fridayVotedV7')) return;
+  votes[k]++; localStorage.setItem('fridayVotesV7',JSON.stringify(votes)); localStorage.setItem('fridayVotedV7','1');
+  b.classList.add('selected'); render();
 }
 function render(){
  const total=Object.values(votes).reduce((a,b)=>a+b,0);
- document.getElementById('results').classList.add('show');
- document.getElementById('total').textContent=total+' people voted';
- Object.keys(votes).forEach(k=>{
+ document.getElementById('results').innerHTML=Object.entries(options).map(([k,n])=>{
    const pct=total?Math.round(votes[k]/total*100):0;
-   document.getElementById('n-'+k).textContent=pct+'%';
-   setTimeout(()=>document.getElementById('f-'+k).style.width=pct+'%',30);
- });
+   return `<div class="bar"><span>${n}</span><div class="trackbar"><div class="fill" style="width:${pct}%"></div></div><b>${pct}%</b></div>`;
+ }).join('')+`<div style="font-size:11px;color:#999;margin-top:14px">${total} suara · hasil tersimpan di browser ini</div>`;
 }
+render();
 </script>
 </body>
 </html>
