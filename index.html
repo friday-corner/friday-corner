@@ -1,213 +1,125 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Friday Corner — A little break</title>
-<meta name="description" content="Friday Corner — apresiasi, musik, film, dan sedikit hiburan setiap Jumat.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FRIDAY — Mini Shoutout</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap');
-
-:root{
-  --bg:#0b0c10; --paper:#f5f1e8; --ink:#15161a; --muted:#a7a9b0;
-  --line:rgba(255,255,255,.12); --accent:#d9ff63; --warm:#ffb86b;
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#111;color:#f5f3ed;font-family:"DM Sans",sans-serif}
+a{text-decoration:none;color:inherit}.page{overflow:hidden}
+.top{position:fixed;z-index:20;top:0;left:0;right:0;padding:24px 4vw;display:flex;justify-content:space-between;align-items:center;mix-blend-mode:difference}
+.brand{font-weight:700;letter-spacing:.15em;font-size:12px}.top a{font-size:11px;text-transform:uppercase;letter-spacing:.12em}
+.hero{height:100svh;min-height:650px;position:relative;display:flex;align-items:flex-end;padding:0 5vw 7vh;background:#d9ff55;color:#111}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 75% 25%,#fff8 0 3%,transparent 20%),linear-gradient(120deg,#d9ff55 0%,#b8ed37 35%,#e9ff9a 100%);animation:breath 7s ease-in-out infinite alternate}
+@keyframes breath{to{filter:hue-rotate(9deg) brightness(1.04)}}
+.hero-content{position:relative;width:100%;z-index:2}.tiny{font-size:11px;text-transform:uppercase;letter-spacing:.25em;margin-bottom:18px}
+.hero-title{font-family:"Space Grotesk";font-size:clamp(90px,19vw,290px);line-height:.72;letter-spacing:-.085em;margin:0;font-weight:700}
+.hero-title span{display:block;margin-left:13vw}.hero-sub{display:flex;justify-content:space-between;align-items:end;margin-top:45px;font-size:13px;line-height:1.5}
+.hero-sub p{max-width:310px}.date{font-family:"Space Grotesk";font-size:clamp(35px,5vw,70px);font-weight:600;letter-spacing:-.05em}
+.side{position:absolute;right:4vw;top:48%;writing-mode:vertical-rl;text-transform:uppercase;letter-spacing:.2em;font-size:9px;z-index:3}
+.story{min-height:100svh;padding:14vh 5vw;background:#111;display:grid;grid-template-columns:38% 62%;gap:3vw;align-items:center}
+.label{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:#8e8e88}.story h2{font-family:"Space Grotesk";font-size:clamp(55px,9vw,140px);line-height:.82;letter-spacing:-.075em;margin:20px 0}
+.story h2 .lime{color:#d9ff55}.story-copy{max-width:380px;color:#aaa;line-height:1.75;font-size:14px}.name-note{margin-top:35px;font-size:11px;text-transform:uppercase;letter-spacing:.15em;color:#d9ff55}
+.portrait{height:min(78vh,760px);min-height:520px;position:relative;overflow:hidden;background:
+radial-gradient(ellipse at 50% 33%,#e9c7a8 0 9%,transparent 9.5%),
+radial-gradient(ellipse at 50% 53%,#8c573f 0 21%,transparent 21.5%),
+linear-gradient(125deg,#30342a,#77785c 45%,#171916 46%,#20221c);
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:#fff;font-family:"DM Sans",sans-serif;overflow-x:hidden}
-a{color:inherit;text-decoration:none}
-.noise{position:fixed;inset:0;pointer-events:none;opacity:.045;z-index:20;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-.orb{position:absolute;border-radius:50%;filter:blur(8px);opacity:.5;animation:float 10s ease-in-out infinite}
-.o1{width:320px;height:320px;background:#7f5cff;right:-100px;top:80px}.o2{width:230px;height:230px;background:#d9ff63;left:-80px;top:420px;animation-delay:-4s}.o3{width:180px;height:180px;background:#ff8d5c;right:15%;bottom:10%;animation-delay:-7s}
-@keyframes float{50%{transform:translate(30px,-35px) scale(1.08)}}
-nav{position:fixed;z-index:30;top:0;left:0;right:0;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 6vw;background:linear-gradient(to bottom,rgba(11,12,16,.92),transparent);backdrop-filter:blur(10px)}
-.logo{font-weight:800;letter-spacing:.08em;font-size:13px}.logo span{color:var(--accent)}
-.navlinks{display:flex;gap:25px;font-size:12px;color:#c9cad0}.navlinks a:hover{color:var(--accent)}
-.hero{min-height:100vh;position:relative;display:grid;place-items:center;padding:110px 6vw 70px;overflow:hidden}
-.hero-inner{width:min(1180px,100%);position:relative;z-index:2}
-.kicker{font-size:12px;text-transform:uppercase;letter-spacing:.22em;color:var(--accent);margin-bottom:22px}
-.hero h1{font-family:"Playfair Display",serif;font-size:clamp(58px,10vw,150px);line-height:.82;margin:0;max-width:1000px;letter-spacing:-.055em}
-.hero h1 em{font-weight:600;color:transparent;-webkit-text-stroke:1px #fff;font-style:normal}
-.hero-bottom{display:flex;justify-content:space-between;align-items:end;margin-top:55px;max-width:930px}
-.hero-copy{max-width:410px;color:#bfc0c6;line-height:1.7;font-size:14px}
-.scroll{font-size:11px;text-transform:uppercase;letter-spacing:.15em;color:#8f9199}
-.scroll:after{content:" ↓";color:var(--accent)}
-section{padding:120px 6vw}
-.wrap{width:min(1180px,100%);margin:auto}
-.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:#8e9098;margin-bottom:14px}
-.section-title{font-family:"Playfair Display",serif;font-size:clamp(38px,6vw,72px);line-height:.95;margin:0 0 45px}
-.feature{display:grid;grid-template-columns:1.1fr .9fr;min-height:540px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.feature-visual{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:radial-gradient(circle at 50% 45%,#333d2d 0,#171a18 35%,#0d0e11 72%)}
-.feature-visual:before{content:"";width:360px;height:360px;border-radius:50%;background:var(--accent);opacity:.13;filter:blur(2px);position:absolute;animation:pulse 4s ease-in-out infinite}
-@keyframes pulse{50%{transform:scale(1.12);opacity:.2}}
-.initial{position:relative;width:250px;height:250px;border:1px solid rgba(255,255,255,.28);border-radius:50%;display:grid;place-items:center;font-family:"Playfair Display",serif;font-size:100px;background:rgba(255,255,255,.04);box-shadow:0 0 80px rgba(217,255,99,.13)}
-.spotlight{position:absolute;top:28px;left:28px;background:var(--accent);color:#111;padding:9px 13px;font-size:10px;text-transform:uppercase;letter-spacing:.14em;font-weight:800}
-.feature-copy{padding:60px;display:flex;flex-direction:column;justify-content:center;background:#111319}
-.feature-copy h3{font-family:"Playfair Display",serif;font-size:clamp(34px,4vw,54px);line-height:1;margin:0 0 20px}
-.feature-copy p{color:#b7b8bf;line-height:1.75;max-width:470px}
-.quote{font-size:16px;color:#fff;border-left:2px solid var(--accent);padding-left:17px;margin-top:22px}
-button,.btn{border:0;cursor:pointer;font:inherit}
-.btn{display:inline-flex;align-items:center;gap:10px;width:max-content;margin-top:28px;background:var(--accent);color:#111;padding:13px 17px;font-weight:800;font-size:12px;border-radius:999px;transition:.25s}
-.btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(217,255,99,.16)}
-.dark{background:#0f1014}
-.music{display:grid;grid-template-columns:.75fr 1.25fr;gap:70px;align-items:start}
-.music-intro p{color:#9fa1a9;line-height:1.7;max-width:360px}
-.player{border-top:1px solid var(--line)}
-.track{display:grid;grid-template-columns:58px 1fr auto;gap:18px;align-items:center;padding:22px 0;border-bottom:1px solid var(--line);transition:.25s}
-.track:hover{padding-left:10px;background:rgba(255,255,255,.025)}
-.cover{width:58px;height:58px;border-radius:12px;display:grid;place-items:center;font-weight:800;font-size:11px;background:linear-gradient(135deg,#d9ff63,#565f34)}
-.c2{background:linear-gradient(135deg,#f3c6ff,#40384d)}.c3{background:linear-gradient(135deg,#ffbd8a,#54372c)}
-.track b{display:block;font-size:14px}.track small{color:#858791;display:block;margin-top:5px}
-.play{width:35px;height:35px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;color:#fff}
-.movies{background:var(--paper);color:var(--ink)}
-.movies .eyebrow{color:#6b6b69}
-.movies .section-title{color:#15161a}
-.poster-rail{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.poster{aspect-ratio:2/3;position:relative;overflow:hidden;border-radius:2px;padding:22px;display:flex;align-items:end;transition:.4s;box-shadow:0 12px 30px rgba(0,0,0,.14)}
-.poster:hover{transform:translateY(-10px) rotate(-1deg)}
-.p1{background:linear-gradient(160deg,#18243a,#6e89a8 45%,#d7d2c5)}.p2{background:linear-gradient(160deg,#f2c36b,#ee785e 48%,#493b31)}.p3{background:linear-gradient(160deg,#dadbd7,#7b8774 50%,#252c29)}.p4{background:linear-gradient(160deg,#f5d7b5,#9d6c8d 45%,#2b2340)}
-.poster:before{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,rgba(0,0,0,.65))}
-.poster-text{position:relative;color:white}.poster-title{font-family:"Playfair Display",serif;font-size:30px;line-height:.9}.poster-sub{font-size:10px;letter-spacing:.15em;text-transform:uppercase;margin-top:10px;opacity:.8}
-.fun{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.fun-item{min-height:190px;border:1px solid var(--line);padding:30px;position:relative;overflow:hidden;background:#12141a}
-.fun-item:hover .big{transform:rotate(-5deg) scale(1.05)}
-.big{font-size:70px;position:absolute;right:25px;top:12px;transition:.3s}
-.fun-item h4{margin:65px 0 8px;font-size:18px}.fun-item p{margin:0;color:#93959e;font-size:13px;max-width:300px;line-height:1.6}
-.poll{margin-top:18px;border:1px solid var(--line);padding:30px;display:flex;align-items:center;justify-content:space-between;gap:25px}
-.poll h4{margin:0;font-family:"Playfair Display",serif;font-size:28px}.poll-actions{display:flex;gap:8px;flex-wrap:wrap}.vote{padding:10px 14px;background:#1b1e25;color:#fff;border:1px solid var(--line);border-radius:999px;font-size:12px}.vote:hover{border-color:var(--accent);color:var(--accent)}
-footer{padding:45px 6vw;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:#777a83;font-size:11px}
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}.reveal.show{opacity:1;transform:none}
-#confetti{position:fixed;inset:0;pointer-events:none;z-index:50}
+.portrait:before{content:"EMR";position:absolute;right:-5%;top:4%;font-family:"Space Grotesk";font-size:26vw;font-weight:700;line-height:.7;color:#ffffff08;letter-spacing:-.1em}
+.portrait:after{content:"BEST INSPIRATION";position:absolute;left:0;bottom:0;background:#d9ff55;color:#111;padding:13px 18px;font-size:10px;letter-spacing:.2em;font-weight:700}
+.face{position:absolute;left:50%;top:30%;transform:translateX(-50%);width:26%;aspect-ratio:.78;border-radius:48% 48% 44% 44%;background:linear-gradient(135deg,#b9805e,#d7a77d);box-shadow:0 40px 70px #0006}
+.shoulder{position:absolute;left:18%;right:18%;bottom:-7%;height:43%;border-radius:50% 50% 0 0;background:linear-gradient(90deg,#20251e,#52584a,#20251e)}
+.badge{position:absolute;right:25px;top:25px;border:1px solid #fff5;padding:12px;color:#fff;font-size:9px;letter-spacing:.18em}
+.music{min-height:100svh;background:#e9e5dc;color:#111;padding:12vh 5vw;position:relative}
+.music-grid{display:grid;grid-template-columns:1fr 1fr;gap:7vw;align-items:end}
+.music h2{font-family:"Space Grotesk";font-size:clamp(60px,10vw,150px);line-height:.78;letter-spacing:-.08em;margin:20px 0 35px}
+.music-intro{max-width:350px;color:#555;font-size:14px;line-height:1.7}
+.now{position:relative;height:540px;background:#1a1a1a;color:#fff;padding:35px;display:flex;flex-direction:column;justify-content:end;overflow:hidden}
+.album{position:absolute;inset:0;background:conic-gradient(from 140deg,#d9ff55,#8e6cff,#ff785e,#d9ff55);opacity:.9;clip-path:polygon(15% 0,100% 0,85% 100%,0 100%)}
+.disc{position:absolute;width:370px;height:370px;border-radius:50%;right:-70px;top:70px;background:repeating-radial-gradient(circle,#111 0 2px,#171717 3px 5px);box-shadow:0 20px 50px #0008}
+.now-content{position:relative;z-index:2}.now small{text-transform:uppercase;letter-spacing:.2em}.now h3{font-family:"Space Grotesk";font-size:45px;letter-spacing:-.05em;margin:8px 0}
+.play{display:inline-flex;width:54px;height:54px;border-radius:50%;background:#d9ff55;color:#111;align-items:center;justify-content:center;margin-top:18px}
+.playlist{margin-top:70px;border-top:1px solid #aaa}.song{display:grid;grid-template-columns:50px 1fr auto;padding:20px 0;border-bottom:1px solid #bbb;align-items:center}.song-num{font-family:"Space Grotesk";font-size:12px}.song b{font-size:15px}.song small{display:block;color:#777;margin-top:4px}.song em{font-style:normal;color:#777;font-size:11px}
+.movies{background:#171717;padding:12vh 5vw;min-height:100svh}.movie-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:55px}.movie-head h2{font-family:"Space Grotesk";font-size:clamp(65px,10vw,145px);line-height:.75;letter-spacing:-.08em;margin:0}.movie-head p{max-width:230px;color:#888;font-size:12px;line-height:1.6}
+.reel{display:flex;gap:18px;overflow-x:auto;padding-bottom:30px;scrollbar-width:none}.reel::-webkit-scrollbar{display:none}
+.poster{flex:0 0 min(31vw,370px);height:min(68vh,590px);position:relative;padding:25px;display:flex;align-items:flex-end;overflow:hidden;transition:.45s}
+.poster:hover{transform:translateY(-12px)}.poster:before{content:"";position:absolute;inset:0;background:linear-gradient(transparent 35%,#000b)}
+.p1{background:linear-gradient(145deg,#182f47,#90a8bd 40%,#c8b69b)}.p2{background:linear-gradient(145deg,#f3b949,#e46d4d 55%,#342d29)}.p3{background:linear-gradient(145deg,#e3e3d8,#788778 48%,#252b28)}.p4{background:linear-gradient(145deg,#e8bda7,#82658d 50%,#211a35)}
+.postertext{position:relative;z-index:2}.poster small{text-transform:uppercase;letter-spacing:.2em;font-size:9px}.poster h3{font-family:"Space Grotesk";font-size:48px;line-height:.82;letter-spacing:-.07em;margin:8px 0}.poster p{font-size:11px;color:#ddd}
+.fun{min-height:80vh;background:#d9ff55;color:#111;padding:12vh 5vw}.fun h2{font-family:"Space Grotesk";font-size:clamp(70px,12vw,170px);line-height:.75;letter-spacing:-.09em;margin:15px 0 60px}
+.question{display:grid;grid-template-columns:1fr 1fr;border-top:2px solid #111;border-bottom:2px solid #111}.question-title{font-family:"Space Grotesk";font-size:clamp(28px,4vw,55px);letter-spacing:-.05em;padding:40px 0}.answers{display:grid;grid-template-columns:1fr 1fr}.answers button{border:0;border-left:1px solid #111;background:transparent;font:inherit;font-size:12px;padding:20px;cursor:pointer;text-align:left}.answers button:hover,.answers button.active{background:#111;color:#d9ff55}
+.end{min-height:55vh;background:#111;display:grid;place-items:center;text-align:center;padding:60px 20px}.end h2{font-family:"Space Grotesk";font-size:clamp(60px,12vw,180px);line-height:.75;letter-spacing:-.09em;margin:0}.end p{color:#777;margin-top:35px}
 @media(max-width:800px){
- .navlinks{display:none}.hero{padding-top:130px}.hero-bottom{display:block}.scroll{margin-top:25px}
- .feature,.music{grid-template-columns:1fr}.feature-copy{padding:38px}.feature-visual{min-height:390px}
- .music{gap:35px}.poster-rail{grid-template-columns:1fr 1fr}.fun{grid-template-columns:1fr}
- .poll{display:block}.poll-actions{margin-top:20px}footer{display:block}footer span{display:block;margin-top:8px}
+ .top{padding:20px}.hero{padding:0 6vw 6vh}.hero-title{font-size:25vw}.hero-title span{margin-left:8vw}.hero-sub{display:block}.date{margin-top:25px}
+ .story{grid-template-columns:1fr;padding:100px 6vw}.portrait{height:70vh;min-height:430px}.music{padding:90px 6vw}.music-grid{grid-template-columns:1fr}.now{height:430px}.movies{padding:90px 6vw}.poster{flex-basis:72vw}.movie-head{display:block}.movie-head p{margin-top:30px}.fun{padding:90px 6vw}.question{grid-template-columns:1fr}.answers button{border-top:1px solid #111;border-left:0}
 }
 </style>
 </head>
 <body>
-<div class="noise"></div>
-<canvas id="confetti"></canvas>
+<div class="page">
+<header class="top"><div class="brand">FRIDAY / CORNER</div><a href="#shoutout">↓ explore</a></header>
 
-<nav>
-  <a class="logo" href="#">FRIDAY<span>.</span>CORNER</a>
-  <div class="navlinks">
-    <a href="#shoutout">Shoutout</a><a href="#music">Music</a><a href="#movies">Movies</a><a href="#fun">Fun</a>
-  </div>
-</nav>
-
-<header class="hero">
-  <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
-  <div class="hero-inner">
-    <div class="kicker">Every Friday · Customer Care</div>
-    <h1>A little break.<br><em>A good thing.</em></h1>
-    <div class="hero-bottom">
-      <div class="hero-copy">Ruang kecil untuk berhenti sebentar, kasih apresiasi, pilih lagu, cari tontonan, dan menikmati Jumat tanpa ribet.</div>
-      <div class="scroll">Scroll untuk mulai</div>
-    </div>
-  </div>
-</header>
-
-<section id="shoutout">
-<div class="wrap reveal">
-  <div class="eyebrow">01 / This Friday</div>
-  <h2 class="section-title">Best Inspiration</h2>
-  <div class="feature">
-    <div class="feature-visual">
-      <div class="spotlight">Friday Spotlight</div>
-      <div class="initial">E</div>
-    </div>
-    <div class="feature-copy">
-      <div class="eyebrow">Shoutout of the week</div>
-      <h3>Eny Mei Ranti</h3>
-      <p>Untuk energi positif, semangat, dan hal-hal kecil yang bikin suasana kerja terasa lebih ringan.</p>
-      <div class="quote">“Terus menginspirasi, sekecil apa pun hal baik yang kita lakukan.”</div>
-      <button class="btn" onclick="celebrate()">✦ Give a little applause</button>
-    </div>
-  </div>
+<section class="hero">
+<div class="side">A little break from the daily hustle</div>
+<div class="hero-content">
+<div class="tiny">Customer Care · Every Friday</div>
+<h1 class="hero-title">FRI<span>DAY</span></h1>
+<div class="hero-sub"><p>Bukan portal kantor.<br>Bukan juga tugas tambahan.<br><b>Cuma sedikit ruang buat menikmati Jumat.</b></p><div class="date">WEEK<br>END</div></div>
 </div>
 </section>
 
-<section id="music" class="dark">
-<div class="wrap reveal">
-  <div class="music">
-    <div class="music-intro">
-      <div class="eyebrow">02 / Friday soundtrack</div>
-      <h2 class="section-title">Press play.<br>Forget the queue.</h2>
-      <p>Beberapa pilihan lagu buat nemenin perjalanan pulang, closing, atau sekadar bikin mood Jumat naik sedikit.</p>
-    </div>
-    <div class="player">
-      <a class="track" href="https://www.youtube.com/results?search_query=Golden+Harry+Styles" target="_blank">
-        <div class="cover">GOLDEN</div><div><b>Golden</b><small>Harry Styles · feel good</small></div><div class="play">▶</div>
-      </a>
-      <a class="track" href="https://www.youtube.com/results?search_query=End+of+Beginning+Djo" target="_blank">
-        <div class="cover c2">EOB</div><div><b>End of Beginning</b><small>Djo · late afternoon</small></div><div class="play">▶</div>
-      </a>
-      <a class="track" href="https://www.youtube.com/results?search_query=Sunday+Best+Surfaces" target="_blank">
-        <div class="cover c3">SUN</div><div><b>Sunday Best</b><small>Surfaces · good vibes</small></div><div class="play">▶</div>
-      </a>
-    </div>
-  </div>
+<section class="story" id="shoutout">
+<div>
+<div class="label">01 — The person</div>
+<h2>GOOD<br>PEOPLE<br><span class="lime">MATTER.</span></h2>
+<p class="story-copy">Minggu ini, satu nama kita taruh di depan. Bukan karena harus paling hebat, tapi karena ada hal kecil yang layak diapresiasi.</p>
+<div class="name-note">Friday Spotlight · Eny Mei Ranti</div>
+</div>
+<div class="portrait"><div class="badge">BEST / INSPIRATION / 2026</div><div class="face"></div><div class="shoulder"></div></div>
+</section>
+
+<section class="music">
+<div class="music-grid">
+<div>
+<div class="label">02 — Soundtrack</div>
+<h2>PRESS<br>PLAY.</h2>
+<p class="music-intro">Tiga lagu pilihan untuk menemani perjalanan pulang, closing, atau sekadar bikin suasana Jumat terasa beda.</p>
+</div>
+<div class="now">
+<div class="album"></div><div class="disc"></div>
+<div class="now-content"><small>Now playing</small><h3>Golden</h3><div>Harry Styles · Feel Good</div><a class="play" target="_blank" href="https://www.youtube.com/results?search_query=Golden+Harry+Styles">▶</a></div>
+</div>
+</div>
+<div class="playlist">
+<a class="song" target="_blank" href="https://www.youtube.com/results?search_query=Golden+Harry+Styles"><span class="song-num">01</span><div><b>Golden</b><small>Harry Styles</small></div><em>03:28 ↗</em></a>
+<a class="song" target="_blank" href="https://www.youtube.com/results?search_query=End+of+Beginning+Djo"><span class="song-num">02</span><div><b>End of Beginning</b><small>Djo</small></div><em>02:39 ↗</em></a>
+<a class="song" target="_blank" href="https://www.youtube.com/results?search_query=Sunday+Best+Surfaces"><span class="song-num">03</span><div><b>Sunday Best</b><small>Surfaces</small></div><em>02:38 ↗</em></a>
 </div>
 </section>
 
-<section id="movies" class="movies">
-<div class="wrap reveal">
-  <div class="eyebrow">03 / Movie corner</div>
-  <h2 class="section-title">Weekend picks.</h2>
-  <div class="poster-rail">
-    <a class="poster p1" href="https://www.youtube.com/results?search_query=Interstellar+trailer" target="_blank"><div class="poster-text"><div class="poster-title">Interstellar</div><div class="poster-sub">Epic · Sci-Fi</div></div></a>
-    <a class="poster p2" href="https://www.youtube.com/results?search_query=Ratatouille+trailer" target="_blank"><div class="poster-text"><div class="poster-title">Ratatouille</div><div class="poster-sub">Warm · Comfort</div></div></a>
-    <a class="poster p3" href="https://www.youtube.com/results?search_query=The+Intern+trailer" target="_blank"><div class="poster-text"><div class="poster-title">The Intern</div><div class="poster-sub">Easy · Inspiring</div></div></a>
-    <a class="poster p4" href="https://www.youtube.com/results?search_query=About+Time+trailer" target="_blank"><div class="poster-text"><div class="poster-title">About Time</div><div class="poster-sub">Feel good · Heart</div></div></a>
-  </div>
+<section class="movies" id="movies">
+<div class="movie-head"><h2>WATCH<br>THIS.</h2><p>Weekend picks untuk yang mau rebahan, ketawa, mikir, atau sekadar ditemani cerita bagus.</p></div>
+<div class="reel">
+<a class="poster p1" target="_blank" href="https://www.youtube.com/results?search_query=Interstellar+trailer"><div class="postertext"><small>Sci-Fi · Epic</small><h3>INTER<br>STELLAR</h3><p>Kalau mau nonton sesuatu yang bikin bengong setelah selesai.</p></div></a>
+<a class="poster p2" target="_blank" href="https://www.youtube.com/results?search_query=Ratatouille+trailer"><div class="postertext"><small>Animation · Warm</small><h3>RATA<br>TOUILLE</h3><p>Comfort movie yang nggak pernah salah.</p></div></a>
+<a class="poster p3" target="_blank" href="https://www.youtube.com/results?search_query=The+Intern+trailer"><div class="postertext"><small>Comedy · Inspiring</small><h3>THE<br>INTERN</h3><p>Ringan, hangat, dan cocok buat weekend.</p></div></a>
+<a class="poster p4" target="_blank" href="https://www.youtube.com/results?search_query=About+Time+trailer"><div class="postertext"><small>Romance · Feel Good</small><h3>ABOUT<br>TIME</h3><p>Film tentang menghargai hal-hal sederhana.</p></div></a>
 </div>
 </section>
 
-<section id="fun" class="dark">
-<div class="wrap reveal">
-  <div class="eyebrow">04 / Friday fun</div>
-  <h2 class="section-title">No meeting.<br>Just this.</h2>
-  <div class="fun">
-    <div class="fun-item"><div class="big">☕</div><h4>Small reminder</h4><p>Hari Jumat tidak harus selalu produktif maksimal. Yang penting pulang dengan kepala sedikit lebih ringan.</p></div>
-    <div class="fun-item"><div class="big">😂</div><h4>Friday mood</h4><p>“Saya bukan malas. Saya sedang menghemat energi untuk weekend.”</p></div>
-  </div>
-  <div class="poll">
-    <div><div class="eyebrow">1 question Friday</div><h4>Weekend kamu lebih cocok yang mana?</h4></div>
-    <div class="poll-actions">
-      <button class="vote" onclick="vote(this)">😴 Rebahan</button>
-      <button class="vote" onclick="vote(this)">🍜 Kulineran</button>
-      <button class="vote" onclick="vote(this)">🎬 Marathon</button>
-      <button class="vote" onclick="vote(this)">🚗 Jalan-jalan</button>
-    </div>
-  </div>
-</div>
+<section class="fun" id="fun">
+<div class="label">04 — One question</div><h2>YOUR<br>WEEKEND?</h2>
+<div class="question"><div class="question-title">Besok libur.<br>Mode kamu apa?</div><div class="answers">
+<button onclick="pick(this)">😴 REBAHAN</button><button onclick="pick(this)">🍜 KULINERAN</button><button onclick="pick(this)">🎬 MARATHON</button><button onclick="pick(this)">🚗 JALAN-JALAN</button>
+</div></div>
 </section>
 
-<footer><span>FRIDAY.CORNER</span><span>Made for a better Friday · Update weekly</span></footer>
-
+<section class="end"><div><div class="label">05 — See you</div><h2>SAME PEOPLE.<br><span style="color:#d9ff55">NEW FRIDAY.</span></h2><p>Friday Corner · updated weekly</p></div></section>
+</div>
 <script>
-const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(x=>observer.observe(x));
-
-function vote(btn){
-  document.querySelectorAll('.vote').forEach(x=>x.style.borderColor='');
-  btn.style.borderColor='#d9ff63'; btn.style.color='#d9ff63';
-}
-
-function celebrate(){
- const c=document.getElementById('confetti'),ctx=c.getContext('2d');
- c.width=innerWidth;c.height=innerHeight;
- const pieces=Array.from({length:100},()=>({x:innerWidth/2,y:innerHeight*.58,vx:(Math.random()-.5)*10,vy:-Math.random()*9-3,r:Math.random()*5+2,a:1}));
- let t=0;
- function frame(){
-   ctx.clearRect(0,0,c.width,c.height);t++;
-   pieces.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.18;p.a-=.008;ctx.globalAlpha=Math.max(0,p.a);ctx.fillStyle=['#d9ff63','#fff','#ffb86b','#b79cff'][Math.floor(Math.random()*4)];ctx.fillRect(p.x,p.y,p.r,p.r*2)});
-   if(t<130)requestAnimationFrame(frame);else ctx.clearRect(0,0,c.width,c.height);
- }
- frame();
-}
+function pick(x){document.querySelectorAll('.answers button').forEach(b=>b.classList.remove('active'));x.classList.add('active')}
 </script>
 </body>
 </html>
