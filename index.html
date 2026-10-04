@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Friday Corner — Customer Care</title>
+<style>
+:root{
+  --yellow:#f6c928; --dark:#17202a; --cream:#fffaf0; --muted:#69727d;
+  --card:#ffffff; --line:#e9e3d6;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,Arial,sans-serif;background:var(--cream);color:var(--dark)}
+.container{max-width:1050px;margin:auto;padding:0 20px}
+header{background:var(--dark);color:white;padding:48px 0 42px;position:relative;overflow:hidden}
+header:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:var(--yellow);right:-80px;top:-120px;opacity:.95}
+.badge{display:inline-block;background:var(--yellow);color:var(--dark);font-weight:800;padding:7px 12px;border-radius:99px;font-size:12px;letter-spacing:.5px}
+h1{font-size:clamp(42px,8vw,78px);line-height:.9;margin:18px 0 12px;letter-spacing:-3px;position:relative;z-index:1}
+.subtitle{font-size:18px;color:#dce1e5;max-width:620px;margin:0;line-height:1.5}
+nav{background:white;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.navin{display:flex;gap:22px;overflow:auto;padding:13px 20px}
+nav a{color:var(--dark);text-decoration:none;font-weight:700;font-size:14px;white-space:nowrap}
+main{padding:34px 0 60px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 6px 20px rgba(30,30,30,.04)}
+.card h2{margin:8px 0 8px;font-size:22px}
+.card p{color:var(--muted);line-height:1.55;margin:0}
+.icon{font-size:30px}
+.hero{grid-column:span 2;background:#fff1a9}
+.hero h2{font-size:30px}
+.section{margin-top:34px}
+.section-title{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:15px}
+.section-title h2{margin:0;font-size:28px}
+.small{font-size:13px;color:var(--muted)}
+.poll{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+button,.btn{border:0;background:var(--dark);color:white;border-radius:12px;padding:11px 15px;font-weight:800;cursor:pointer;text-decoration:none;display:inline-block}
+button:hover,.btn:hover{opacity:.88}
+.result{margin-top:14px;font-weight:700;min-height:20px}
+.shout{border-left:5px solid var(--yellow);background:white;padding:18px;border-radius:12px;margin:10px 0;border:1px solid var(--line)}
+.shout strong{display:block;margin-bottom:5px}
+.shout span{color:var(--muted);font-size:14px}
+.cta{background:var(--dark);color:white;border-radius:22px;padding:28px;margin-top:34px}
+.cta p{color:#dce1e5}
+footer{padding:28px 0;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+@media(max-width:760px){
+ .grid{grid-template-columns:1fr}
+ .hero{grid-column:span 1}
+ header{padding:38px 0}
+ h1{letter-spacing:-2px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <span class="badge">CUSTOMER CARE</span>
+    <h1>FRIDAY<br>CORNER.</h1>
+    <p class="subtitle">A little break from the daily hustle. Tempat kecil untuk apresiasi, hiburan, dan hal-hal ringan setiap Jumat.</p>
+  </div>
+</header>
+
+<nav>
+  <div class="container navin">
+    <a href="#today">This Friday</a>
+    <a href="#shoutout">Shoutout</a>
+    <a href="#fun">Fun</a>
+    <a href="#movie">Movie</a>
+    <a href="#poll">Poll</a>
+  </div>
+</nav>
+
+<main class="container">
+
+  <section id="today" class="grid">
+    <div class="card hero">
+      <div class="icon">🌟</div>
+      <h2>Friday Mini Shoutout</h2>
+      <p>Apresiasi kecil untuk teman yang bikin kerja hari ini terasa sedikit lebih ringan.</p>
+      <br>
+      <a class="btn" href="#shoutout">Lihat shoutout →</a>
+    </div>
+
+    <div class="card">
+      <div class="icon">☕</div>
+      <h2>Break dulu.</h2>
+      <p>Kerja boleh serius. Jumat jangan lupa kasih jeda sebentar.</p>
+    </div>
+  </section>
+
+  <section id="shoutout" class="section">
+    <div class="section-title">
+      <h2>💛 Shoutout of the Week</h2>
+      <span class="small">Update setiap Jumat</span>
+    </div>
+
+    <div class="shout">
+      <strong>Untuk: Teman satu tim</strong>
+      <span>“Terima kasih sudah selalu mau bantu ketika lagi ramai. Kecil buat kamu, besar buat yang dibantu.”</span>
+    </div>
+
+    <div class="shout">
+      <strong>Untuk: Tim Customer Care</strong>
+      <span>“Survived another busy week. Good job, guys!”</span>
+    </div>
+
+    <a class="btn" href="https://forms.google.com/" target="_blank">💌 Mau kasih shoutout?</a>
+    <p class="small">Ganti link tombol di atas dengan link Google Form kantor.</p>
+  </section>
+
+  <section id="fun" class="section">
+    <div class="section-title">
+      <h2>😂 Friday Fun</h2>
+      <span class="small">30 detik aja</span>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="icon">🤔</div>
+        <h2>Yang mana kamu?</h2>
+        <p>Ketika customer bilang: “Saya cuma mau tanya sedikit...”</p>
+        <p style="font-size:28px;margin-top:12px">😌 → 😐 → 😭</p>
+      </div>
+      <div class="card">
+        <div class="icon">🎧</div>
+        <h2>Song of the Week</h2>
+        <p>Tambahkan lagu yang sedang ramai atau rekomendasi dari teman-teman.</p>
+      </div>
+      <div id="movie" class="card">
+        <div class="icon">🎬</div>
+        <h2>Movie Corner</h2>
+        <p>Isi dengan 1 film/series pilihan minggu ini. Tambahkan trailer atau link streaming resmi.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="poll" class="section">
+    <div class="section-title">
+      <h2>🎲 Friday Poll</h2>
+      <span class="small">Tanpa form. Tinggal klik.</span>
+    </div>
+    <div class="card">
+      <h2>Kalau dapat tambahan 1 hari libur, pilih apa?</h2>
+      <div class="poll">
+        <button onclick="vote('😴 Tidur seharian')">😴 Tidur</button>
+        <button onclick="vote('🍜 Kulineran')">🍜 Kulineran</button>
+        <button onclick="vote('🎮 Gaming')">🎮 Gaming</button>
+        <button onclick="vote('🏖️ Jalan-jalan')">🏖️ Jalan-jalan</button>
+      </div>
+      <div class="result" id="result"></div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>💛 Satu kata baik bisa bikin beda.</h2>
+    <p>Friday Corner dibuat ringan. Mau baca saja boleh. Mau vote boleh. Mau kasih apresiasi juga boleh.</p>
+    <a class="btn" style="background:var(--yellow);color:var(--dark)" href="#shoutout">Give a Shoutout</a>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    Friday Corner • Customer Care • Update setiap Jumat
+  </div>
+</footer>
+
+<script>
+function vote(choice){
+  document.getElementById("result").textContent = "Pilihan kamu: " + choice + " 👍";
+}
+</script>
+</body>
+</html>
