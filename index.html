@@ -47,10 +47,26 @@ footer{padding:24px 0 45px;display:flex;justify-content:space-between;font-size:
 
 /* ===== POLL + MOBILE POLISH ===== */
 @media(max-width:850px){.vote{min-height:46px}.choice{padding:15px 0}.barRow{grid-template-columns:72px 1fr 35px}.inspireCopy h3{font-size:38px}.portrait img{object-position:center center}}
+
+/* ===== LENNA CATEGORY REFERENCE — ADDITIVE FEATURE ===== */
+.categoryRef{background:var(--ink);color:white;padding:28px;border:2px solid var(--ink)}
+.categoryTools{display:grid;grid-template-columns:1fr auto;gap:10px;margin-bottom:18px}
+.categorySearch{width:100%;border:2px solid white;background:white;color:var(--ink);padding:14px 15px;font:500 12px "DM Sans",sans-serif;outline:none}
+.categorySearch:focus{border-color:var(--yellow)}
+.categoryDashBtn{display:inline-flex;align-items:center;justify-content:center;background:var(--yellow);color:var(--ink);padding:0 18px;font-size:9px;font-weight:700;white-space:nowrap}
+.categoryResults{display:grid;gap:9px}
+.categoryItem{background:white;color:var(--ink);padding:16px;border-left:7px solid var(--blue)}
+.categoryItem h3{font:600 18px "Space Grotesk";margin:0 0 5px}
+.categoryItem p{font-size:10px;line-height:1.55;color:var(--muted);margin:0}
+.categoryEmpty{padding:18px;border:1px dashed #7f858a;color:#c8cccf;font-size:10px;line-height:1.6}
+.categoryFrame{margin-top:18px;border:1px solid #343b40;background:white;overflow:hidden}
+.categoryFrame iframe{display:block;width:100%;height:620px;border:0}
+.categoryHint{font-size:9px;color:#bfc5c9;margin-top:10px;line-height:1.5}
+@media(max-width:850px){.categoryTools{grid-template-columns:1fr}.categoryDashBtn{min-height:44px}.categoryFrame iframe{height:520px}.categoryRef{padding:18px}}
 </style>
 </head>
 <body>
-<header class="wrap top"><div class="logo">FRIDAY<span>/</span>CORNER</div><nav class="nav"><a href="#update">UPDATE</a><a href="#best">BEST</a><a href="#sound">SOUND</a><a href="#watch">WATCH</a><a href="#weekend">POLL</a><a href="#shout">SHOUTOUT</a></nav><div class="date">EVERY FRIDAY / CC TEAM</div></header>
+<header class="wrap top"><div class="logo">FRIDAY<span>/</span>CORNER</div><nav class="nav"><a href="#update">UPDATE</a><a href="#best">BEST</a><a href="#sound">SOUND</a><a href="#watch">WATCH</a><a href="#category">LENNA</a><a href="#weekend">POLL</a><a href="#shout">SHOUTOUT</a></nav><div class="date">EVERY FRIDAY / CC TEAM</div></header>
 
 <main class="wrap">
 <section class="hero" id="weekend">
@@ -142,7 +158,28 @@ footer{padding:24px 0 45px;display:flex;justify-content:space-between;font-size:
 <article class="movie"><div><div class="poster posterImg"><img src="https://www.impawards.com/intl/indonesia/2024/posters/agak_laen_ver2_xxlg.jpg" alt="Poster Agak Laen" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('posterFallback');this.parentElement.insertAdjacentText('beforeend','AGAK LAEN');"></div><h3>Agak Laen</h3><p>Indonesia · Comedy · Horror · buat yang mau ketawa bareng dengan vibe lokal.</p></div><div><div class="buttons"><a class="btn primary" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Agak+Laen+official+trailer">WATCH TRAILER ↗</a><a class="btn" target="_blank" rel="noopener" href="https://www.justwatch.com/id">CEK NONTON ↗</a></div></div></article>
 </div><div class="note">* Pilihan minggu ini sengaja dicampur: Korea, Barat, dan Indonesia. Untuk link film gratis, gunakan sumber legal yang memang sedang menyediakan tayangan gratis. Tombol “Cek Nonton” membantu mencari opsi resmi yang tersedia.</div></section>
 
-<section class="section" id="shout"><div class="sectionHead"><h2>06 — MINI SHOUTOUT</h2><span>SAY SOMETHING NICE.</span></div><div class="shout"><div class="shoutLeft"><h2>WHO MADE<br>YOUR WEEK?</h2><p>Pilih satu orang yang minggu ini paling membantu, bikin semangat, atau sekadar bikin hari kerja jadi lebih enak.</p><a class="shoutBtn" target="_blank" rel="noopener" href="https://forms.gle/aB7zJ47aAvrMRyu8A">GIVE A SHOUTOUT ↗</a></div><div class="shoutRight"><div><h3>GOOD PEOPLE<br>MATTER.</h3><p>See you next Friday.</p></div></div></div></section>
+<section class="section" id="category">
+  <div class="sectionHead">
+    <h2>06 — LENNA CATEGORY REFERENCE</h2>
+    <span>SEARCH CATEGORY · CHECK DESCRIPTION</span>
+  </div>
+  <p class="updateIntro">Cari kategori yang dibutuhkan saat handle chat di Lenna. Referensi dashboard resmi juga tersedia di bawah untuk pengecekan detail.</p>
+  <div class="categoryRef">
+    <div class="categoryTools">
+      <input id="categorySearch" class="categorySearch" type="search" placeholder="Ketik nama kategori untuk mencari…" autocomplete="off">
+      <a class="categoryDashBtn" target="_blank" rel="noopener" href="https://datastudio.google.com/u/0/reporting/4e069cab-3cc0-4ef4-8b52-15f2bde14846/page/iJXbF?s=kqRKlEJtWic">BUKA CATEGORY DASHBOARD ↗</a>
+    </div>
+    <div id="categoryResults" class="categoryResults">
+      <div class="categoryEmpty">Data kategori belum dimuat ke website. Dashboard resmi di bawah tetap bisa digunakan untuk mengecek kategori dan deskripsinya.</div>
+    </div>
+    <div class="categoryHint">Tips: setelah data kategori tersedia dalam format CSV/Excel/JSON, data dapat dimasukkan ke fitur ini sehingga hasil pencarian dan deskripsi muncul langsung tanpa membuka Lenna.</div>
+    <div class="categoryFrame">
+      <iframe title="Lenna Category Reference Dashboard" src="https://datastudio.google.com/u/0/reporting/4e069cab-3cc0-4ef4-8b52-15f2bde14846/page/iJXbF?s=kqRKlEJtWic" loading="lazy" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="shout"><div class="sectionHead"><h2>07 — MINI SHOUTOUT</h2><span>SAY SOMETHING NICE.</span></div><div class="shout"><div class="shoutLeft"><h2>WHO MADE<br>YOUR WEEK?</h2><p>Pilih satu orang yang minggu ini paling membantu, bikin semangat, atau sekadar bikin hari kerja jadi lebih enak.</p><a class="shoutBtn" target="_blank" rel="noopener" href="https://forms.gle/aB7zJ47aAvrMRyu8A">GIVE A SHOUTOUT ↗</a></div><div class="shoutRight"><div><h3>GOOD PEOPLE<br>MATTER.</h3><p>See you next Friday.</p></div></div></div></section>
 </main>
 <footer class="wrap"><span>FRIDAY/CORNER · CC TEAM</span><span>GOOD VIBES. GREAT PEOPLE.</span></footer>
 
@@ -302,5 +339,41 @@ btn.addEventListener("click",async()=>{
 });
 
 load();
+
+// ===== LENNA CATEGORY REFERENCE =====
+// Keep category records here once the official category export is available.
+// The UI intentionally does not invent category names/descriptions.
+const LENNA_CATEGORIES = [];
+const categorySearch = document.getElementById("categorySearch");
+const categoryResults = document.getElementById("categoryResults");
+
+function renderCategoryResults(query="") {
+  if (!categoryResults) return;
+  const q = query.trim().toLowerCase();
+  if (!LENNA_CATEGORIES.length) {
+    categoryResults.innerHTML = '<div class="categoryEmpty">Belum ada data kategori lokal. Gunakan <b>Category Dashboard</b> untuk cek sekarang, atau masukkan export kategori resmi agar pencarian + deskripsi bisa tampil langsung di sini.</div>';
+    return;
+  }
+  const matches = LENNA_CATEGORIES.filter(item => {
+    const haystack = `${item.name || ""} ${item.description || ""} ${(item.keywords || []).join(" ")}`.toLowerCase();
+    return !q || haystack.includes(q);
+  });
+  if (!matches.length) {
+    categoryResults.innerHTML = '<div class="categoryEmpty">Kategori tidak ditemukan. Coba kata kunci lain atau cek Category Dashboard.</div>';
+    return;
+  }
+  categoryResults.innerHTML = matches.map(item => `
+    <article class="categoryItem">
+      <h3>${escapeHtml(item.name || "Untitled Category")}</h3>
+      <p>${escapeHtml(item.description || "Belum ada deskripsi.")}</p>
+    </article>`).join("");
+}
+
+function escapeHtml(value){
+  return String(value).replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;", "'":"&#039;"}[ch]));
+}
+
+categorySearch?.addEventListener("input", e => renderCategoryResults(e.target.value));
+renderCategoryResults();
 </script>
 </body></html>
