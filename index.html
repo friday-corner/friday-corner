@@ -1,115 +1,109 @@
 <!doctype html>
-<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Friday Corner</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
-:root{--bg:#f7f1e6;--card:#fffaf2;--ink:#20251f;--sage:#dfe6d8;--green:#697760;--clay:#c87450;--line:#ddd3c1;--muted:#777970}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:"DM Sans",sans-serif}a{text-decoration:none;color:inherit}.wrap{max-width:1220px;margin:auto;padding:0 24px}
-nav{height:72px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}.brand{font:600 31px Caveat}.brand b{color:var(--clay)}nav div:last-child{font-size:11px;color:var(--muted)}
-.links{display:flex;gap:24px;font-size:11px;font-weight:700}.links a:hover{color:var(--clay)}
-.hero{display:grid;grid-template-columns:1.6fr .7fr;gap:16px;margin-top:18px}.heroMain{min-height:420px;border-radius:22px;padding:45px;display:flex;align-items:flex-end;background:linear-gradient(135deg,#e7eadf,#f2dfcf);position:relative;overflow:hidden}.heroMain:after{content:"";position:absolute;width:480px;height:300px;border-radius:50%;background:#9ca88f;right:-130px;bottom:-130px;opacity:.6}.heroText{position:relative;z-index:1}.eyebrow{font-size:11px;letter-spacing:.18em;font-weight:700}.hero h1{font:700 clamp(76px,11vw,145px)/.78 "Playfair Display";letter-spacing:-.08em;margin:17px 0}.hero h1 span{color:var(--clay)}.hero p{font:500 25px/1.1 Caveat;margin:0;max-width:360px}.mood{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px}.mood h2{font:600 35px Caveat;margin:5px 0}.mood p{font-size:12px;color:var(--muted)}.choice{display:grid;grid-template-columns:34px 1fr auto;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--line);cursor:pointer}.ico{width:30px;height:30px;border-radius:50%;background:var(--sage);display:grid;place-items:center}.choice b{font-size:12px}.pct{font-size:11px;color:var(--muted)}.vote{margin-top:13px;border:0;border-radius:20px;background:var(--ink);color:#fff;padding:11px 16px;font-size:10px;font-weight:700;cursor:pointer}.total{margin-top:15px;font-size:10px;color:var(--muted)}
-.section{margin-top:35px}.head{display:flex;justify-content:space-between;align-items:end;border-bottom:1px solid var(--ink);padding-bottom:10px}.head h2{font:600 35px "Playfair Display";margin:0}.head span{font-size:11px;color:var(--muted)}
-.grid{display:grid;grid-template-columns:1.05fr 1fr 1fr;gap:14px;margin-top:14px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:19px}.tag{font-size:10px;letter-spacing:.12em;font-weight:700}.photo{height:250px;border-radius:13px;margin-top:13px;background:linear-gradient(135deg,#cbd2c3,#ead4c3);display:grid;place-items:center;text-align:center;color:#596153;font:600 20px Caveat}.photo small{display:block;font:10px "DM Sans";margin-top:7px;color:#777970}.card h3{font:600 24px "Playfair Display";margin:14px 0 4px}.script{font:22px Caveat;color:var(--clay)}.card p{font-size:12px;line-height:1.55;color:#666a61}.player{background:#252a25;color:white;border-radius:14px;padding:16px;margin-top:14px}.song{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #454a44;font-size:11px}.song:last-child{border:0}.play{display:inline-block;background:#eef1e8;color:#20251f;border-radius:18px;padding:9px 13px;margin-top:10px;font-size:10px;font-weight:700}
-.movie{height:155px;border-radius:13px;display:grid;place-items:center;text-align:center;color:white;font:600 27px Caveat;background:linear-gradient(135deg,#8193a0,#e4c6aa)}.movie.r{background:linear-gradient(135deg,#c17b5c,#edd7bd)}.movie.i{background:linear-gradient(135deg,#7d8e79,#d5ddcf)}.btns{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px}.btn{border:1px solid var(--ink);border-radius:18px;padding:8px 11px;font-size:10px;font-weight:700}.primary{background:var(--clay);color:white;border-color:var(--clay)}.note{font-size:10px;color:var(--muted);line-height:1.5;margin-top:9px}
-.shout{display:grid;grid-template-columns:1fr 1fr;gap:14px}.shoutCard{background:#f0d4c2;border-radius:18px;padding:30px}.shoutCard h2{font:600 45px Caveat;margin:0}.shoutCard p{font-size:12px;line-height:1.6}.shoutBtn{display:inline-block;background:var(--ink);color:white;border-radius:20px;padding:11px 16px;font-size:10px;font-weight:700}.closing{background:var(--sage);border-radius:18px;display:grid;place-items:center;text-align:center}.closing h2{font:600 42px Caveat;margin:0}.closing p{font-size:11px}
-footer{margin-top:35px;padding:25px 0 45px;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-size:10px;color:var(--muted)}
-@media(max-width:850px){.hero,.grid,.shout{grid-template-columns:1fr}.links{display:none}.wrap{padding:0 15px}.heroMain{min-height:360px}.head{display:block}.head span{display:block;margin-top:5px}.closing{min-height:180px}}
-</style></head><body>
-<nav class="wrap"><div class="brand">Friday Corner <b>✦</b></div><div class="links"><a href="#home">Home</a><a href="#best">Inspiration</a><a href="#music">Soundtrack</a><a href="#watch">Watch</a><a href="#weekend">Weekend</a><a href="#shout">Shoutout</a></div><div>Good people<br>make great days ☺</div></nav>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+:root{--bg:#111315;--panel:#1a1d1f;--panel2:#202427;--text:#f2f0e9;--muted:#a9aca7;--line:#34393b;--accent:#d5a65a;--green:#84977d}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif}a{color:inherit;text-decoration:none}.wrap{max-width:1180px;margin:auto;padding:0 24px}
+nav{height:70px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}.brand{font:700 23px "Space Grotesk";letter-spacing:-.04em}.brand span{color:var(--accent)}.links{display:flex;gap:24px;font-size:11px;color:#c7c9c4}.links a:hover{color:var(--accent)}
+.hero{display:grid;grid-template-columns:1.45fr .8fr;gap:16px;padding-top:18px}.heroMain{min-height:420px;background:linear-gradient(135deg,#202629,#30352f);border:1px solid var(--line);border-radius:10px;padding:45px;display:flex;align-items:flex-end;position:relative;overflow:hidden}.heroMain:after{content:"";position:absolute;width:520px;height:520px;border:1px solid #59615a;border-radius:50%;right:-210px;bottom:-270px}.eyebrow{font-size:10px;letter-spacing:.22em;font-weight:700;color:var(--accent)}h1{font:700 clamp(76px,12vw,145px)/.78 "Space Grotesk";letter-spacing:-.09em;margin:15px 0}.hero p{font-size:18px;color:#c9ccc7;max-width:430px;line-height:1.5}.mood{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:25px}.mood h2{font:600 30px "Space Grotesk";margin:8px 0}.mood p{font-size:12px;color:var(--muted);line-height:1.5}.choice{display:grid;grid-template-columns:35px 1fr auto;align-items:center;gap:10px;padding:13px 10px;margin:5px -10px;border:1px solid transparent;border-radius:7px;cursor:pointer}.choice:hover{background:var(--panel2)}.choice.selected{border-color:var(--accent);background:#29251e}.ico{width:30px;height:30px;display:grid;place-items:center;background:#292d2f;border-radius:6px}.choice b{font-size:12px}.pct{font-size:11px;color:var(--muted)}.vote{width:100%;border:0;border-radius:6px;background:var(--accent);color:#171717;padding:12px;margin-top:12px;font-weight:700;font-size:11px;cursor:pointer}.vote:hover{filter:brightness(1.08)}.vote:disabled{opacity:.5;cursor:not-allowed}.total{font-size:10px;color:var(--muted);margin-top:12px}
+.section{margin-top:36px}.head{display:flex;justify-content:space-between;align-items:end;border-bottom:1px solid var(--line);padding-bottom:12px}.head h2{font:600 28px "Space Grotesk";margin:0}.head span{font-size:10px;color:var(--muted)}.grid{display:grid;grid-template-columns:1.05fr 1fr 1fr;gap:14px;margin-top:14px}.card{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:18px}.tag{font-size:9px;letter-spacing:.15em;font-weight:700;color:var(--accent)}.photo{height:245px;margin-top:13px;border-radius:7px;background:linear-gradient(135deg,#3d4442,#777d72);display:grid;place-items:center;text-align:center;color:#d8ddd5;font-size:15px}.photo small{display:block;font-size:9px;color:#adb3aa;margin-top:5px}.card h3{font:600 22px "Space Grotesk";margin:14px 0 5px}.card p{font-size:11px;line-height:1.6;color:#aeb2ad}.music{background:#17191a}.song{display:flex;justify-content:space-between;border-bottom:1px solid #34383a;padding:11px 0;font-size:11px}.song:last-child{border:0}.spotify{display:inline-block;background:#dedfd8;color:#171918;padding:9px 12px;border-radius:5px;margin-top:12px;font-size:10px;font-weight:700}
+.movie{height:155px;border-radius:7px;display:grid;place-items:center;text-align:center;font:700 25px "Space Grotesk";background:linear-gradient(135deg,#414b52,#8a765f)}.movie.r{background:linear-gradient(135deg,#3f5046,#777e68)}.movie.t{background:linear-gradient(135deg,#55585b,#918777)}.btns{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px}.btn{padding:8px 10px;border:1px solid var(--line);border-radius:5px;font-size:9px;font-weight:700}.primary{background:var(--accent);border-color:var(--accent);color:#181818}.note{font-size:9px;color:#858a84;line-height:1.5;margin-top:8px}
+.shout{display:grid;grid-template-columns:1fr 1fr;gap:14px}.shoutCard{background:#202a25;border:1px solid #35423a;border-radius:9px;padding:30px}.shoutCard h2{font:600 36px "Space Grotesk";margin:0}.shoutCard p{font-size:12px;color:#b9c0ba;line-height:1.6}.shoutBtn{display:inline-block;background:var(--accent);color:#171717;padding:11px 15px;border-radius:5px;font-size:10px;font-weight:700}.closing{border:1px solid var(--line);border-radius:9px;display:grid;place-items:center;text-align:center;background:#181b1d}.closing h2{font:600 31px "Space Grotesk";margin:0}.closing p{font-size:10px;color:var(--muted)}
+footer{border-top:1px solid var(--line);margin-top:35px;padding:25px 0 45px;display:flex;justify-content:space-between;font-size:10px;color:var(--muted)}
+@media(max-width:850px){.hero,.grid,.shout{grid-template-columns:1fr}.links{display:none}.wrap{padding:0 15px}.heroMain{min-height:340px}.head{display:block}.head span{display:block;margin-top:5px}}
+</style>
+</head>
+<body>
+<nav class="wrap"><div class="brand">FRIDAY<span>.</span> CORNER</div><div class="links"><a href="#home">HOME</a><a href="#best">INSPIRATION</a><a href="#music">SOUNDTRACK</a><a href="#watch">WATCH</a><a href="#weekend">WEEKEND</a><a href="#shout">SHOUTOUT</a></div><div style="font-size:10px;color:#a9aca7">GOOD PEOPLE<br>MAKE GREAT DAYS</div></nav>
 
 <main class="wrap" id="home">
-<section class="hero"><div class="heroMain"><div class="heroText"><div class="eyebrow">FRIDAY CORNER</div><h1>FRIDAY<span>.</span></h1><p>A little break from the daily hustle.</p></div></div>
-<aside class="mood" id="weekend"><div class="eyebrow">THIS WEEK'S MOOD</div><h2>Your weekend?</h2><p>Pilih yang paling menggambarkan rencana akhir pekanmu.</p>
-<div id="choices"><div class="choice" data-k="rebahan"><span class="ico">🛋️</span><b>Rebahan</b><span class="pct">—</span></div><div class="choice" data-k="kulineran"><span class="ico">🍜</span><b>Kulineran</b><span class="pct">—</span></div><div class="choice" data-k="marathon"><span class="ico">🎬</span><b>Marathon film</b><span class="pct">—</span></div><div class="choice" data-k="jalan"><span class="ico">🚶</span><b>Jalan-jalan</b><span class="pct">—</span></div></div><button class="vote" onclick="sendVote()">Vote pilihan saya →</button><div class="total" id="total">50 people voted · Vote again next Friday!</div></aside></section>
+<section class="hero">
+<div class="heroMain"><div><div class="eyebrow">FRIDAY CORNER / 07</div><h1>FRIDAY.</h1><p>A short break from the daily hustle. Cek apa yang baru, kasih apresiasi, lalu lanjut santai.</p></div></div>
+<aside class="mood" id="weekend"><div class="eyebrow">THIS WEEK'S MOOD</div><h2>Your weekend?</h2><p>Pilih satu. Klik pilihanmu, lalu tekan vote.</p>
+<div id="choices">
+<div class="choice" data-k="rebahan"><span class="ico">🛋️</span><b>Rebahan</b><span class="pct">—</span></div>
+<div class="choice" data-k="kulineran"><span class="ico">🍜</span><b>Kulineran</b><span class="pct">—</span></div>
+<div class="choice" data-k="marathon"><span class="ico">🎬</span><b>Marathon film</b><span class="pct">—</span></div>
+<div class="choice" data-k="jalan"><span class="ico">🚶</span><b>Jalan-jalan</b><span class="pct">—</span></div>
+</div>
+<button class="vote" id="voteBtn" type="button" disabled>VOTE PILIHAN SAYA →</button>
+<div class="total" id="total">0 votes</div>
+</aside>
+</section>
 
-<section class="section" id="best"><div class="head"><h2>01 — Best Inspiration</h2><span>A little appreciation goes a long way.</span></div><div class="grid">
-<article class="card"><div class="tag">BEST INSPIRATION · THIS WEEK</div><div class="photo">Foto Eny Mei Ranti di sini<small>Upload foto asli untuk mengganti area ini</small></div><h3>Eny Mei Ranti</h3><div class="script">Small steps, big impact.</div><p>Best Inspiration minggu ini — untuk energi positif, semangat kerja, dan hal-hal kecil yang bikin suasana kerja jadi lebih ringan.</p></article>
-<article class="card" id="music"><div class="tag">02 · FRIDAY SOUNDTRACK</div><h3>Good Vibes Only</h3><p>Playlist buat perjalanan pulang.</p><div class="player"><div style="font-size:13px;font-weight:700;margin-bottom:10px">Friday Corner Playlist</div><iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/7xV2TzoaVc0ycW7fwBwAml?utm_source=generator" width="100%" height="180" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe><a class="play" target="_blank" href="https://open.spotify.com/album/7xV2TzoaVc0ycW7fwBwAml">▶ Open Spotify</a></div></article>
-<article class="card" id="watch"><div class="tag">03 · WATCH THIS</div><div class="movie">GOOD MOVIES<br>BETTER MOOD</div><h3>The Bucket List</h3><p>Drama · Adventure · Comedy — hangat buat weekend.</p><div class="btns"><a class="btn primary" target="_blank" href="https://www.youtube.com/results?search_query=The+Bucket+List+official+trailer">Watch Trailer ↗</a><a class="btn" target="_blank" href="https://www.justwatch.com/id">Cek tempat nonton ↗</a></div><div class="note"><b>Link film gratis:</b> cek JustWatch untuk melihat opsi yang sedang gratis secara legal; hindari situs yang tidak resmi.</div></article>
+<section class="section" id="best"><div class="head"><h2>01 — Best Inspiration</h2><span>GOOD WORK DESERVES A MENTION.</span></div><div class="grid">
+<article class="card"><div class="tag">BEST INSPIRATION · THIS WEEK</div><div class="photo">FOTO ENY MEI RANTI<small>Upload foto asli untuk mengganti area ini</small></div><h3>Eny Mei Ranti</h3><p>Best Inspiration minggu ini — apresiasi untuk energi positif, semangat kerja, dan kontribusi yang bikin tim lebih baik.</p></article>
+<article class="card music" id="music"><div class="tag">02 · FRIDAY SOUNDTRACK</div><h3>Good Vibes Only</h3><p>Playlist buat perjalanan pulang.</p><div style="margin-top:14px"><div class="song"><span>Good Days — SZA</span><span>3:39</span></div><div class="song"><span>Better Together — Jack Johnson</span><span>3:27</span></div><div class="song"><span>Here Comes The Sun — The Beatles</span><span>3:05</span></div><a class="spotify" target="_blank" href="https://open.spotify.com/search/Good%20Vibes%20Friday">▶ OPEN SPOTIFY</a></div></article>
+<article class="card" id="watch"><div class="tag">03 · WATCH THIS</div><div class="movie">GOOD MOVIES<br>BETTER MOOD</div><h3>The Bucket List</h3><p>Drama · Adventure · Comedy — hangat buat weekend.</p><div class="btns"><a class="btn primary" target="_blank" href="https://www.youtube.com/results?search_query=The+Bucket+List+official+trailer">WATCH TRAILER ↗</a><a class="btn" target="_blank" href="https://www.justwatch.com/id">CEK TEMPAT NONTON ↗</a></div><div class="note">Untuk “film gratis”, gunakan sumber legal yang memang sedang menawarkan tayangan gratis.</div></article>
 </div></section>
 
-<section class="section"><div class="head"><h2>More Weekend Picks</h2><span>Easy watch. Good mood.</span></div><div class="grid">
-<article class="card"><div class="movie i">INTERSTELLAR</div><h3>Interstellar</h3><p>Sci-fi · Drama · kalau mau yang bikin mikir.</p><div class="btns"><a class="btn primary" target="_blank" href="https://www.youtube.com/results?search_query=Interstellar+official+trailer">Watch Trailer ↗</a><a class="btn" target="_blank" href="https://www.justwatch.com/id">Cek tempat nonton ↗</a></div></article>
-<article class="card"><div class="movie r">RATATOUILLE</div><h3>Ratatouille</h3><p>Animation · Feel good · comfort movie.</p><div class="btns"><a class="btn primary" target="_blank" href="https://www.youtube.com/results?search_query=Ratatouille+official+trailer">Watch Trailer ↗</a><a class="btn" target="_blank" href="https://www.justwatch.com/id">Cek tempat nonton ↗</a></div></article>
-<article class="card"><div class="movie">THE INTERN</div><h3>The Intern</h3><p>Comedy · Drama · ringan dan hangat.</p><div class="btns"><a class="btn primary" target="_blank" href="https://www.youtube.com/results?search_query=The+Intern+official+trailer">Watch Trailer ↗</a><a class="btn" target="_blank" href="https://www.justwatch.com/id">Cek tempat nonton ↗</a></div></article>
+<section class="section"><div class="head"><h2>More Weekend Picks</h2><span>THREE EASY PICKS.</span></div><div class="grid">
+<article class="card"><div class="movie">INTERSTELLAR</div><h3>Interstellar</h3><p>Sci-fi · Drama · kalau mau yang bikin mikir.</p><div class="btns"><a class="btn primary" target="_blank" href="https://www.youtube.com/results?search_query=Interstellar+official+trailer">WATCH TRAILER ↗</a><a class="btn" target="_blank" href="https://www.justwatch.com/id">CEK TEMPAT NONTON ↗</a></div></article>
+<article class="card"><div class="movie r">RATATOUILLE</div><h3>Ratatouille</h3><p>Animation · Feel good · comfort movie.</p><div class="btns"><a class="btn primary" target="_blank" href="https://www.youtube.com/results?search_query=Ratatouille+official+trailer">WATCH TRAILER ↗</a><a class="btn" target="_blank" href="https://www.justwatch.com/id">CEK TEMPAT NONTON ↗</a></div></article>
+<article class="card"><div class="movie t">THE INTERN</div><h3>The Intern</h3><p>Comedy · Drama · ringan dan hangat.</p><div class="btns"><a class="btn primary" target="_blank" href="https://www.youtube.com/results?search_query=The+Intern+official+trailer">WATCH TRAILER ↗</a><a class="btn" target="_blank" href="https://www.justwatch.com/id">CEK TEMPAT NONTON ↗</a></div></article>
 </div></section>
 
-<section class="section" id="shout"><div class="head"><h2>04 — Friday Mini Shoutout</h2><span>Say something nice.</span></div><div class="shout"><div class="shoutCard"><h2>Shout Out!</h2><p>Punya rekan kerja yang patut diapresiasi? Yuk, kasih shoutout singkat.</p><a class="shoutBtn" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSeaWh58P_A2-EhlVESjZsN04-r_ysEDsQm49aqCVTVCSkJFp4g/viewform">Give a Shoutout ↗</a></div><div class="closing"><div><h2>Same vibes,<br>new stories.</h2><p>See you next Friday ✦</p></div></div></div></section>
+<section class="section" id="shout"><div class="head"><h2>04 — Friday Mini Shoutout</h2><span>SAY SOMETHING NICE.</span></div><div class="shout"><div class="shoutCard"><h2>Shout Out.</h2><p>Punya rekan kerja yang patut diapresiasi? Kasih shoutout singkat.</p><a class="shoutBtn" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSeaWh58P_A2-EhlVESjZsN04-r_ysEDsQm49aqCVTVCSkJFp4g/viewform">GIVE A SHOUTOUT ↗</a></div><div class="closing"><div><h2>SAME VIBES.<br>NEW FRIDAY.</h2><p>See you next Friday.</p></div></div></div></section>
 </main>
-<footer class="wrap"><span>♫ Good vibes. Great people. Every Friday.</span><span>Friday Corner ✦</span></footer>
+<footer class="wrap"><span>FRIDAY CORNER — GOOD VIBES. GREAT PEOPLE.</span><span>✦ EVERY FRIDAY</span></footer>
 
 <script>
-const API_URL=""; // nanti diisi URL Google Apps Script
-const keys=["rebahan","kulineran","marathon","jalan"];
-let selected="";
+const API_URL="";
+const choices=document.querySelectorAll(".choice");
+const voteBtn=document.getElementById("voteBtn");
+let selected=null;
+const defaultVotes={rebahan:0,kulineran:0,marathon:0,jalan:0};
 
-document.querySelectorAll(".choice").forEach(x=>{
-  x.addEventListener("click",()=>{
-    selected=x.dataset.k;
-    document.querySelectorAll(".choice").forEach(y=>{
-      y.style.outline="none";
-      y.style.background="";
-    });
-    x.style.outline="2px solid #c87450";
-    x.style.background="#f2e5d8";
+choices.forEach(choice=>{
+  choice.addEventListener("click",()=>{
+    selected=choice.dataset.k;
+    choices.forEach(c=>c.classList.remove("selected"));
+    choice.classList.add("selected");
+    voteBtn.disabled=false;
+    voteBtn.textContent="VOTE "+choice.querySelector("b").textContent.toUpperCase()+" →";
   });
 });
 
-async function sendVote(){
-  if(!selected){
-    alert("Pilih dulu weekend kamu 😊");
+voteBtn.addEventListener("click", async()=>{
+  if(!selected)return;
+  if(localStorage.getItem("fridayVotedV9")){
+    alert("Kamu sudah vote minggu ini 👍");
     return;
   }
-
-  // Kalau Google Apps Script belum dipasang, vote tetap berfungsi
-  // di browser ini agar tombol/flow bisa dites.
-  if(!API_URL){
-    const saved=JSON.parse(localStorage.getItem("fridayCornerVotes")||'{"rebahan":0,"kulineran":0,"marathon":0,"jalan":0}');
-    if(localStorage.getItem("fridayCornerHasVoted")){
-      alert("Kamu sudah vote minggu ini 😊");
-      return;
-    }
-    saved[selected]++;
-    localStorage.setItem("fridayCornerVotes",JSON.stringify(saved));
-    localStorage.setItem("fridayCornerHasVoted","1");
-    renderLocal(saved);
-    return;
+  if(API_URL){
+    try{
+      await fetch(API_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:"choice="+encodeURIComponent(selected)});
+      localStorage.setItem("fridayVotedV9","1");
+      loadResults();
+    }catch(e){alert("Vote gagal dikirim. Coba lagi.");}
+  }else{
+    const votes=JSON.parse(localStorage.getItem("fridayVotesV9")||JSON.stringify(defaultVotes));
+    votes[selected]=(votes[selected]||0)+1;
+    localStorage.setItem("fridayVotesV9",JSON.stringify(votes));
+    localStorage.setItem("fridayVotedV9","1");
+    render(votes);
   }
+});
 
-  try{
-    await fetch(API_URL,{
-      method:"POST",
-      mode:"no-cors",
-      headers:{"Content-Type":"application/x-www-form-urlencoded"},
-      body:"choice="+encodeURIComponent(selected)
-    });
-    localStorage.setItem("fridayCornerHasVoted","1");
-    setTimeout(loadVotes,500);
-  }catch(e){
-    alert("Vote belum berhasil dikirim. Coba lagi.");
-  }
-}
-
-function renderLocal(d){
-  const total=keys.reduce((sum,k)=>sum+(Number(d[k])||0),0);
-  document.querySelectorAll(".choice").forEach(x=>{
-    const n=Number(d[x.dataset.k])||0;
-    x.querySelector(".pct").textContent=(total?Math.round(n/total*100):0)+"%";
+function render(votes){
+  const total=Object.values(votes).reduce((a,b)=>a+Number(b||0),0);
+  choices.forEach(c=>{
+    const n=Number(votes[c.dataset.k]||0);
+    c.querySelector(".pct").textContent=(total?Math.round(n/total*100):0)+"%";
   });
-  document.getElementById("total").textContent=total+" people voted";
+  document.getElementById("total").textContent=total+" votes";
 }
-
-async function loadVotes(){
+async function loadResults(){
   if(!API_URL){
-    const saved=JSON.parse(localStorage.getItem("fridayCornerVotes")||'{"rebahan":0,"kulineran":0,"marathon":0,"jalan":0}');
-    renderLocal(saved);
+    render(JSON.parse(localStorage.getItem("fridayVotesV9")||JSON.stringify(defaultVotes)));
     return;
   }
-  try{
-    const d=await (await fetch(API_URL+"?action=results",{cache:"no-store"})).json();
-    renderLocal(d);
-  }catch(e){}
+  try{const d=await (await fetch(API_URL+"?action=results",{cache:"no-store"})).json();render(d)}catch(e){}
 }
-
-loadVotes();
-</script></body></html>
+loadResults();
+</script>
+</body></html>
