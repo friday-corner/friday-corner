@@ -39,9 +39,77 @@ footer{margin-top:35px;padding:25px 0 45px;border-top:1px solid var(--line);disp
 <footer class="wrap"><span>♫ Good vibes. Great people. Every Friday.</span><span>Friday Corner ✦</span></footer>
 
 <script>
-const API_URL="";let selected="";
-document.querySelectorAll(".choice").forEach(x=>x.onclick=()=>{selected=x.dataset.k;document.querySelectorAll(".choice").forEach(y=>y.style.outline="none");x.style.outline="2px solid #c87450"});
-async function sendVote(){if(!selected||!API_URL)return;try{await fetch(API_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:"choice="+selected});loadVotes()}catch(e){}}
-async function loadVotes(){if(!API_URL)return;try{let d=await (await fetch(API_URL+"?action=results",{cache:"no-store"})).json(),t=Object.values(d).reduce((a,b)=>a+Number(b||0),0);document.querySelectorAll(".choice").forEach(x=>x.querySelector(".pct").textContent=(t?Math.round((d[x.dataset.k]||0)/t*100):0)+"%");document.getElementById("total").textContent=t+" people voted · Vote again next Friday!"}catch(e){}}
+const API_URL=""; // nanti diisi URL Google Apps Script
+const keys=["rebahan","kulineran","marathon","jalan"];
+let selected="";
+
+document.querySelectorAll(".choice").forEach(x=>{
+  x.addEventListener("click",()=>{
+    selected=x.dataset.k;
+    document.querySelectorAll(".choice").forEach(y=>{
+      y.style.outline="none";
+      y.style.background="";
+    });
+    x.style.outline="2px solid #c87450";
+    x.style.background="#f2e5d8";
+  });
+});
+
+async function sendVote(){
+  if(!selected){
+    alert("Pilih dulu weekend kamu 😊");
+    return;
+  }
+
+  // Kalau Google Apps Script belum dipasang, vote tetap berfungsi
+  // di browser ini agar tombol/flow bisa dites.
+  if(!API_URL){
+    const saved=JSON.parse(localStorage.getItem("fridayCornerVotes")||'{"rebahan":0,"kulineran":0,"marathon":0,"jalan":0}');
+    if(localStorage.getItem("fridayCornerHasVoted")){
+      alert("Kamu sudah vote minggu ini 😊");
+      return;
+    }
+    saved[selected]++;
+    localStorage.setItem("fridayCornerVotes",JSON.stringify(saved));
+    localStorage.setItem("fridayCornerHasVoted","1");
+    renderLocal(saved);
+    return;
+  }
+
+  try{
+    await fetch(API_URL,{
+      method:"POST",
+      mode:"no-cors",
+      headers:{"Content-Type":"application/x-www-form-urlencoded"},
+      body:"choice="+encodeURIComponent(selected)
+    });
+    localStorage.setItem("fridayCornerHasVoted","1");
+    setTimeout(loadVotes,500);
+  }catch(e){
+    alert("Vote belum berhasil dikirim. Coba lagi.");
+  }
+}
+
+function renderLocal(d){
+  const total=keys.reduce((sum,k)=>sum+(Number(d[k])||0),0);
+  document.querySelectorAll(".choice").forEach(x=>{
+    const n=Number(d[x.dataset.k])||0;
+    x.querySelector(".pct").textContent=(total?Math.round(n/total*100):0)+"%";
+  });
+  document.getElementById("total").textContent=total+" people voted";
+}
+
+async function loadVotes(){
+  if(!API_URL){
+    const saved=JSON.parse(localStorage.getItem("fridayCornerVotes")||'{"rebahan":0,"kulineran":0,"marathon":0,"jalan":0}');
+    renderLocal(saved);
+    return;
+  }
+  try{
+    const d=await (await fetch(API_URL+"?action=results",{cache:"no-store"})).json();
+    renderLocal(d);
+  }catch(e){}
+}
+
 loadVotes();
 </script></body></html>
