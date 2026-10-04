@@ -2,82 +2,212 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Friday Corner — Customer Care</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Friday Corner — A little break</title>
+<meta name="description" content="Friday Corner — apresiasi, musik, film, dan sedikit hiburan setiap Jumat.">
 <style>
-:root{--bg:#0b1020;--panel:#121a2d;--panel2:#18223a;--text:#f7f8fc;--muted:#aab3c7;--yellow:#ffd45c;--pink:#ff7fa8;--cyan:#6edcff;--green:#91e6b3}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;overflow-x:hidden}
-body:before{content:"";position:fixed;inset:-30%;z-index:-2;background:radial-gradient(circle at 20% 20%,rgba(110,220,255,.14),transparent 28%),radial-gradient(circle at 80% 15%,rgba(255,127,168,.14),transparent 25%),radial-gradient(circle at 50% 80%,rgba(255,212,92,.09),transparent 28%);animation:drift 14s ease-in-out infinite alternate}
-@keyframes drift{to{transform:translate(3%,2%) scale(1.05)}}a{text-decoration:none;color:inherit}.wrap{width:min(1120px,calc(100% - 36px));margin:auto}
-nav{position:sticky;top:0;z-index:50;background:rgba(11,16,32,.72);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.08)}
-.nav{height:70px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:950;letter-spacing:-1px}.brand b{background:var(--yellow);color:#111827;padding:6px 9px;border-radius:9px;transform:rotate(-2deg);display:inline-block}
-.navlinks{display:flex;gap:20px;color:var(--muted);font-size:13px;font-weight:800}.navlinks a:hover{color:white}
-.hero{padding:92px 0 65px;position:relative}.eyebrow{display:inline-flex;gap:8px;align-items:center;color:#0c1222;background:var(--yellow);padding:7px 12px;border-radius:999px;font-weight:900;font-size:12px;box-shadow:0 0 30px rgba(255,212,92,.18)}
-h1{font-size:clamp(50px,8vw,92px);line-height:.9;letter-spacing:-6px;max-width:850px;margin:20px 0}.grad{background:linear-gradient(100deg,#fff,var(--cyan),var(--pink),var(--yellow));background-size:300% 100%;color:transparent;background-clip:text;animation:shine 8s linear infinite}
-@keyframes shine{to{background-position:300% 0}}.hero p{max-width:650px;color:var(--muted);font-size:18px;line-height:1.65}.heroBtns{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}.btn{padding:13px 18px;border-radius:13px;background:white;color:#111827;font-weight:900;box-shadow:0 8px 30px rgba(0,0,0,.25);transition:.25s}.btn:hover{transform:translateY(-3px)}.btn.alt{background:rgba(255,255,255,.07);color:white;border:1px solid rgba(255,255,255,.12)}
-.section{padding:46px 0}.head{display:flex;justify-content:space-between;align-items:end;margin-bottom:20px}.head h2{font-size:31px;letter-spacing:-1.5px;margin:0}.head p{margin:7px 0 0;color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:linear-gradient(145deg,rgba(24,34,58,.95),rgba(15,22,39,.95));border:1px solid rgba(255,255,255,.08);border-radius:22px;overflow:hidden;box-shadow:0 18px 55px rgba(0,0,0,.2);transition:.3s}.card:hover{transform:translateY(-7px);border-color:rgba(255,255,255,.18)}.content{padding:20px}.poster{height:230px;display:grid;place-items:center;font-size:75px;position:relative;overflow:hidden}.poster:after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 35%,rgba(255,255,255,.14),transparent 65%);transform:translateX(-100%);animation:sweep 5s infinite}.card:hover .poster:after{animation-duration:1.2s}@keyframes sweep{to{transform:translateX(100%)}}
-.movie1{background:linear-gradient(135deg,#171a3c,#5b3b8f,#e27aa0)}.movie2{background:linear-gradient(135deg,#092b3a,#177e89,#80d0c7)}.movie3{background:linear-gradient(135deg,#211c34,#6b4b91,#ffbd69)}
-.music{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}.player{background:linear-gradient(135deg,#18223a,#242b4e);border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:24px;display:flex;gap:18px;align-items:center}.cover{width:105px;height:105px;border-radius:20px;display:grid;place-items:center;font-size:40px;background:linear-gradient(135deg,var(--pink),var(--yellow));box-shadow:0 12px 35px rgba(0,0,0,.3)}.player h3{margin:0 0 5px}.meta{color:var(--muted);font-size:13px}.play{margin-top:14px;border:0;border-radius:999px;background:white;color:#111;padding:9px 15px;font-weight:900;cursor:pointer}
-.shout{display:grid;grid-template-columns:1.3fr .7fr;gap:16px}.feature{padding:28px;border-radius:25px;background:linear-gradient(135deg,#18223a,#111827);border:1px solid rgba(255,255,255,.08);position:relative;overflow:hidden}.feature:before{content:"✦";position:absolute;right:22px;top:-22px;font-size:150px;color:rgba(255,212,92,.08);animation:spin 15s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.tag{display:inline-block;background:var(--yellow);color:#111827;border-radius:999px;padding:7px 10px;font-size:11px;font-weight:950}.feature h3{font-size:34px;margin:15px 0 10px}.quote{color:#d7dcea;line-height:1.6;font-size:17px;max-width:650px}.photo{min-height:260px;border-radius:25px;background:linear-gradient(135deg,var(--pink),#8b7bff,var(--cyan));display:grid;place-items:center;font-size:95px;animation:float 4s ease-in-out infinite alternate}@keyframes float{to{transform:translateY(-7px) rotate(1deg)}}
-.poll{padding:24px;background:var(--panel);border:1px solid rgba(255,255,255,.08);border-radius:24px}.pollBtns{display:flex;gap:9px;flex-wrap:wrap}.poll button{background:#202b47;border:1px solid rgba(255,255,255,.09);color:white;border-radius:12px;padding:11px 14px;font-weight:800;cursor:pointer}.poll button:hover{background:#2d3b60}.note{color:var(--muted);font-size:13px;margin-top:13px}
-footer{padding:70px 0 40px;text-align:center;color:#68738a;font-size:13px}
-@media(max-width:800px){.navlinks{display:none}.grid,.music,.shout{grid-template-columns:1fr}.hero{padding-top:65px}h1{letter-spacing:-4px}.photo{min-height:210px}}
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap');
+
+:root{
+  --bg:#0b0c10; --paper:#f5f1e8; --ink:#15161a; --muted:#a7a9b0;
+  --line:rgba(255,255,255,.12); --accent:#d9ff63; --warm:#ffb86b;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:#fff;font-family:"DM Sans",sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.noise{position:fixed;inset:0;pointer-events:none;opacity:.045;z-index:20;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.orb{position:absolute;border-radius:50%;filter:blur(8px);opacity:.5;animation:float 10s ease-in-out infinite}
+.o1{width:320px;height:320px;background:#7f5cff;right:-100px;top:80px}.o2{width:230px;height:230px;background:#d9ff63;left:-80px;top:420px;animation-delay:-4s}.o3{width:180px;height:180px;background:#ff8d5c;right:15%;bottom:10%;animation-delay:-7s}
+@keyframes float{50%{transform:translate(30px,-35px) scale(1.08)}}
+nav{position:fixed;z-index:30;top:0;left:0;right:0;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 6vw;background:linear-gradient(to bottom,rgba(11,12,16,.92),transparent);backdrop-filter:blur(10px)}
+.logo{font-weight:800;letter-spacing:.08em;font-size:13px}.logo span{color:var(--accent)}
+.navlinks{display:flex;gap:25px;font-size:12px;color:#c9cad0}.navlinks a:hover{color:var(--accent)}
+.hero{min-height:100vh;position:relative;display:grid;place-items:center;padding:110px 6vw 70px;overflow:hidden}
+.hero-inner{width:min(1180px,100%);position:relative;z-index:2}
+.kicker{font-size:12px;text-transform:uppercase;letter-spacing:.22em;color:var(--accent);margin-bottom:22px}
+.hero h1{font-family:"Playfair Display",serif;font-size:clamp(58px,10vw,150px);line-height:.82;margin:0;max-width:1000px;letter-spacing:-.055em}
+.hero h1 em{font-weight:600;color:transparent;-webkit-text-stroke:1px #fff;font-style:normal}
+.hero-bottom{display:flex;justify-content:space-between;align-items:end;margin-top:55px;max-width:930px}
+.hero-copy{max-width:410px;color:#bfc0c6;line-height:1.7;font-size:14px}
+.scroll{font-size:11px;text-transform:uppercase;letter-spacing:.15em;color:#8f9199}
+.scroll:after{content:" ↓";color:var(--accent)}
+section{padding:120px 6vw}
+.wrap{width:min(1180px,100%);margin:auto}
+.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:#8e9098;margin-bottom:14px}
+.section-title{font-family:"Playfair Display",serif;font-size:clamp(38px,6vw,72px);line-height:.95;margin:0 0 45px}
+.feature{display:grid;grid-template-columns:1.1fr .9fr;min-height:540px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.feature-visual{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:radial-gradient(circle at 50% 45%,#333d2d 0,#171a18 35%,#0d0e11 72%)}
+.feature-visual:before{content:"";width:360px;height:360px;border-radius:50%;background:var(--accent);opacity:.13;filter:blur(2px);position:absolute;animation:pulse 4s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.12);opacity:.2}}
+.initial{position:relative;width:250px;height:250px;border:1px solid rgba(255,255,255,.28);border-radius:50%;display:grid;place-items:center;font-family:"Playfair Display",serif;font-size:100px;background:rgba(255,255,255,.04);box-shadow:0 0 80px rgba(217,255,99,.13)}
+.spotlight{position:absolute;top:28px;left:28px;background:var(--accent);color:#111;padding:9px 13px;font-size:10px;text-transform:uppercase;letter-spacing:.14em;font-weight:800}
+.feature-copy{padding:60px;display:flex;flex-direction:column;justify-content:center;background:#111319}
+.feature-copy h3{font-family:"Playfair Display",serif;font-size:clamp(34px,4vw,54px);line-height:1;margin:0 0 20px}
+.feature-copy p{color:#b7b8bf;line-height:1.75;max-width:470px}
+.quote{font-size:16px;color:#fff;border-left:2px solid var(--accent);padding-left:17px;margin-top:22px}
+button,.btn{border:0;cursor:pointer;font:inherit}
+.btn{display:inline-flex;align-items:center;gap:10px;width:max-content;margin-top:28px;background:var(--accent);color:#111;padding:13px 17px;font-weight:800;font-size:12px;border-radius:999px;transition:.25s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(217,255,99,.16)}
+.dark{background:#0f1014}
+.music{display:grid;grid-template-columns:.75fr 1.25fr;gap:70px;align-items:start}
+.music-intro p{color:#9fa1a9;line-height:1.7;max-width:360px}
+.player{border-top:1px solid var(--line)}
+.track{display:grid;grid-template-columns:58px 1fr auto;gap:18px;align-items:center;padding:22px 0;border-bottom:1px solid var(--line);transition:.25s}
+.track:hover{padding-left:10px;background:rgba(255,255,255,.025)}
+.cover{width:58px;height:58px;border-radius:12px;display:grid;place-items:center;font-weight:800;font-size:11px;background:linear-gradient(135deg,#d9ff63,#565f34)}
+.c2{background:linear-gradient(135deg,#f3c6ff,#40384d)}.c3{background:linear-gradient(135deg,#ffbd8a,#54372c)}
+.track b{display:block;font-size:14px}.track small{color:#858791;display:block;margin-top:5px}
+.play{width:35px;height:35px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;color:#fff}
+.movies{background:var(--paper);color:var(--ink)}
+.movies .eyebrow{color:#6b6b69}
+.movies .section-title{color:#15161a}
+.poster-rail{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.poster{aspect-ratio:2/3;position:relative;overflow:hidden;border-radius:2px;padding:22px;display:flex;align-items:end;transition:.4s;box-shadow:0 12px 30px rgba(0,0,0,.14)}
+.poster:hover{transform:translateY(-10px) rotate(-1deg)}
+.p1{background:linear-gradient(160deg,#18243a,#6e89a8 45%,#d7d2c5)}.p2{background:linear-gradient(160deg,#f2c36b,#ee785e 48%,#493b31)}.p3{background:linear-gradient(160deg,#dadbd7,#7b8774 50%,#252c29)}.p4{background:linear-gradient(160deg,#f5d7b5,#9d6c8d 45%,#2b2340)}
+.poster:before{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,rgba(0,0,0,.65))}
+.poster-text{position:relative;color:white}.poster-title{font-family:"Playfair Display",serif;font-size:30px;line-height:.9}.poster-sub{font-size:10px;letter-spacing:.15em;text-transform:uppercase;margin-top:10px;opacity:.8}
+.fun{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.fun-item{min-height:190px;border:1px solid var(--line);padding:30px;position:relative;overflow:hidden;background:#12141a}
+.fun-item:hover .big{transform:rotate(-5deg) scale(1.05)}
+.big{font-size:70px;position:absolute;right:25px;top:12px;transition:.3s}
+.fun-item h4{margin:65px 0 8px;font-size:18px}.fun-item p{margin:0;color:#93959e;font-size:13px;max-width:300px;line-height:1.6}
+.poll{margin-top:18px;border:1px solid var(--line);padding:30px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.poll h4{margin:0;font-family:"Playfair Display",serif;font-size:28px}.poll-actions{display:flex;gap:8px;flex-wrap:wrap}.vote{padding:10px 14px;background:#1b1e25;color:#fff;border:1px solid var(--line);border-radius:999px;font-size:12px}.vote:hover{border-color:var(--accent);color:var(--accent)}
+footer{padding:45px 6vw;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:#777a83;font-size:11px}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}.reveal.show{opacity:1;transform:none}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:50}
+@media(max-width:800px){
+ .navlinks{display:none}.hero{padding-top:130px}.hero-bottom{display:block}.scroll{margin-top:25px}
+ .feature,.music{grid-template-columns:1fr}.feature-copy{padding:38px}.feature-visual{min-height:390px}
+ .music{gap:35px}.poster-rail{grid-template-columns:1fr 1fr}.fun{grid-template-columns:1fr}
+ .poll{display:block}.poll-actions{margin-top:20px}footer{display:block}footer span{display:block;margin-top:8px}
+}
 </style>
 </head>
 <body>
-<nav><div class="wrap nav"><div class="brand"><b>FRIDAY</b> CORNER</div><div class="navlinks"><a href="#shout">Shoutout</a><a href="#music">Music</a><a href="#movie">Movies</a><a href="#poll">Poll</a></div></div></nav>
+<div class="noise"></div>
+<canvas id="confetti"></canvas>
 
-<header class="hero"><div class="wrap">
-<span class="eyebrow">✦ EVERY FRIDAY · CUSTOMER CARE</span>
-<h1>Take a breath.<br><span class="grad">It’s Friday.</span></h1>
-<p>Tempat kecil untuk apresiasi, musik, film, dan hal-hal ringan di tengah kesibukan. Nggak perlu lama—cukup mampir sebentar.</p>
-<div class="heroBtns"><a class="btn" href="#shout">💛 Friday Shoutout</a><a class="btn alt" href="#music">🎧 Explore this week</a></div>
-</div></header>
+<nav>
+  <a class="logo" href="#">FRIDAY<span>.</span>CORNER</a>
+  <div class="navlinks">
+    <a href="#shoutout">Shoutout</a><a href="#music">Music</a><a href="#movies">Movies</a><a href="#fun">Fun</a>
+  </div>
+</nav>
 
-<main class="wrap">
-<section id="shout" class="section">
-<div class="head"><div><h2>💛 Friday Mini Shoutout</h2><p>Small recognition. Big energy.</p></div></div>
-<div class="shout"><div class="feature"><span class="tag">BEST INSPIRATION</span><h3>Eny Mei Ranti</h3><div class="quote">“Terima kasih sudah menjadi energi positif dan terus menginspirasi teman-teman di sekitar.”</div><div style="margin-top:20px;color:#8792a8;font-size:13px">— Friday Mini Shoutout</div></div><div class="photo">🌟</div></div>
-<div style="margin-top:18px"><a class="btn" href="https://forms.google.com/" target="_blank">💌 Kasih Shoutout</a></div>
-</section>
+<header class="hero">
+  <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+  <div class="hero-inner">
+    <div class="kicker">Every Friday · Customer Care</div>
+    <h1>A little break.<br><em>A good thing.</em></h1>
+    <div class="hero-bottom">
+      <div class="hero-copy">Ruang kecil untuk berhenti sebentar, kasih apresiasi, pilih lagu, cari tontonan, dan menikmati Jumat tanpa ribet.</div>
+      <div class="scroll">Scroll untuk mulai</div>
+    </div>
+  </div>
+</header>
 
-<section id="music" class="section">
-<div class="head"><div><h2>🎧 Song Picks</h2><p>Lagu pilihan minggu ini.</p></div></div>
-<div class="music">
-<div class="player"><div class="cover">🎶</div><div><h3>Golden — Harry Styles</h3><div class="meta">Friday mood · Feel-good</div><button class="play" onclick="playSong(this,'Golden — Harry Styles')">▶ Play</button></div></div>
-<div class="player"><div class="cover" style="background:linear-gradient(135deg,#6edcff,#7f8cff)">🌊</div><div><h3>End of Beginning — Djo</h3><div class="meta">Chill · Nostalgic</div><button class="play" onclick="playSong(this,'End of Beginning — Djo')">▶ Play</button></div></div>
+<section id="shoutout">
+<div class="wrap reveal">
+  <div class="eyebrow">01 / This Friday</div>
+  <h2 class="section-title">Best Inspiration</h2>
+  <div class="feature">
+    <div class="feature-visual">
+      <div class="spotlight">Friday Spotlight</div>
+      <div class="initial">E</div>
+    </div>
+    <div class="feature-copy">
+      <div class="eyebrow">Shoutout of the week</div>
+      <h3>Eny Mei Ranti</h3>
+      <p>Untuk energi positif, semangat, dan hal-hal kecil yang bikin suasana kerja terasa lebih ringan.</p>
+      <div class="quote">“Terus menginspirasi, sekecil apa pun hal baik yang kita lakukan.”</div>
+      <button class="btn" onclick="celebrate()">✦ Give a little applause</button>
+    </div>
+  </div>
 </div>
-<p id="songMsg" class="note"></p>
 </section>
 
-<section id="movie" class="section">
-<div class="head"><div><h2>🎬 Movie Corner</h2><p>Pilihan tontonan untuk weekend.</p></div></div>
-<div class="grid">
-<div class="card"><div class="poster movie1">🌌</div><div class="content"><h3>Interstellar</h3><p class="meta">Sci-Fi · Drama · ⭐ 8.7</p><p>Kalau mau film yang bikin mikir sekaligus emosional.</p></div></div>
-<div class="card"><div class="poster movie2">🍜</div><div class="content"><h3>Ratatouille</h3><p class="meta">Animation · Comedy · ⭐ 8.1</p><p>Ringan, hangat, dan cocok buat recharge setelah seminggu kerja.</p></div></div>
-<div class="card"><div class="poster movie3">🎭</div><div class="content"><h3>The Intern</h3><p class="meta">Comedy · Drama · ⭐ 7.1</p><p>Feel-good movie dengan cerita kerja, hidup, dan kesempatan kedua.</p></div></div>
+<section id="music" class="dark">
+<div class="wrap reveal">
+  <div class="music">
+    <div class="music-intro">
+      <div class="eyebrow">02 / Friday soundtrack</div>
+      <h2 class="section-title">Press play.<br>Forget the queue.</h2>
+      <p>Beberapa pilihan lagu buat nemenin perjalanan pulang, closing, atau sekadar bikin mood Jumat naik sedikit.</p>
+    </div>
+    <div class="player">
+      <a class="track" href="https://www.youtube.com/results?search_query=Golden+Harry+Styles" target="_blank">
+        <div class="cover">GOLDEN</div><div><b>Golden</b><small>Harry Styles · feel good</small></div><div class="play">▶</div>
+      </a>
+      <a class="track" href="https://www.youtube.com/results?search_query=End+of+Beginning+Djo" target="_blank">
+        <div class="cover c2">EOB</div><div><b>End of Beginning</b><small>Djo · late afternoon</small></div><div class="play">▶</div>
+      </a>
+      <a class="track" href="https://www.youtube.com/results?search_query=Sunday+Best+Surfaces" target="_blank">
+        <div class="cover c3">SUN</div><div><b>Sunday Best</b><small>Surfaces · good vibes</small></div><div class="play">▶</div>
+      </a>
+    </div>
+  </div>
 </div>
 </section>
 
-<section class="section">
-<div class="head"><div><h2>😂 Friday Fun</h2><p>Konten ringan, jangan terlalu serius.</p></div></div>
-<div class="grid">
-<div class="card"><div class="content"><div style="font-size:35px">☕</div><h3>Friday Mood</h3><p>“Kerja dulu. Weekend kemudian.”</p></div></div>
-<div class="card"><div class="content"><div style="font-size:35px">🧠</div><h3>Did You Know?</h3><p>Tambahkan fakta random yang bikin orang berhenti scroll 10 detik.</p></div></div>
-<div class="card"><div class="content"><div style="font-size:35px">📸</div><h3>Moment of the Week</h3><p>Masukkan foto atau momen kecil dari tim minggu ini.</p></div></div>
+<section id="movies" class="movies">
+<div class="wrap reveal">
+  <div class="eyebrow">03 / Movie corner</div>
+  <h2 class="section-title">Weekend picks.</h2>
+  <div class="poster-rail">
+    <a class="poster p1" href="https://www.youtube.com/results?search_query=Interstellar+trailer" target="_blank"><div class="poster-text"><div class="poster-title">Interstellar</div><div class="poster-sub">Epic · Sci-Fi</div></div></a>
+    <a class="poster p2" href="https://www.youtube.com/results?search_query=Ratatouille+trailer" target="_blank"><div class="poster-text"><div class="poster-title">Ratatouille</div><div class="poster-sub">Warm · Comfort</div></div></a>
+    <a class="poster p3" href="https://www.youtube.com/results?search_query=The+Intern+trailer" target="_blank"><div class="poster-text"><div class="poster-title">The Intern</div><div class="poster-sub">Easy · Inspiring</div></div></a>
+    <a class="poster p4" href="https://www.youtube.com/results?search_query=About+Time+trailer" target="_blank"><div class="poster-text"><div class="poster-title">About Time</div><div class="poster-sub">Feel good · Heart</div></div></a>
+  </div>
 </div>
 </section>
 
-<section id="poll" class="section">
-<div class="head"><div><h2>📊 Friday Poll</h2><p>Satu klik. Nggak pakai form.</p></div></div>
-<div class="poll"><h3>Weekend paling enak buat…?</h3><div class="pollBtns"><button onclick="vote(this)">😴 Tidur</button><button onclick="vote(this)">🎬 Nonton</button><button onclick="vote(this)">🍜 Kuliner</button><button onclick="vote(this)">🎸 Musik</button></div><div id="voteMsg" class="note"></div></div>
+<section id="fun" class="dark">
+<div class="wrap reveal">
+  <div class="eyebrow">04 / Friday fun</div>
+  <h2 class="section-title">No meeting.<br>Just this.</h2>
+  <div class="fun">
+    <div class="fun-item"><div class="big">☕</div><h4>Small reminder</h4><p>Hari Jumat tidak harus selalu produktif maksimal. Yang penting pulang dengan kepala sedikit lebih ringan.</p></div>
+    <div class="fun-item"><div class="big">😂</div><h4>Friday mood</h4><p>“Saya bukan malas. Saya sedang menghemat energi untuk weekend.”</p></div>
+  </div>
+  <div class="poll">
+    <div><div class="eyebrow">1 question Friday</div><h4>Weekend kamu lebih cocok yang mana?</h4></div>
+    <div class="poll-actions">
+      <button class="vote" onclick="vote(this)">😴 Rebahan</button>
+      <button class="vote" onclick="vote(this)">🍜 Kulineran</button>
+      <button class="vote" onclick="vote(this)">🎬 Marathon</button>
+      <button class="vote" onclick="vote(this)">🚗 Jalan-jalan</button>
+    </div>
+  </div>
+</div>
 </section>
-</main>
-<footer>Friday Corner · Customer Care · See you next Friday ✦</footer>
+
+<footer><span>FRIDAY.CORNER</span><span>Made for a better Friday · Update weekly</span></footer>
+
 <script>
-function vote(b){document.querySelectorAll('.poll button').forEach(x=>x.style.opacity=.45);b.style.opacity=1;document.getElementById('voteMsg').textContent='Pilihan kamu: '+b.textContent.trim()+' ✓ (demo)'}
-function playSong(b,s){document.getElementById('songMsg').textContent='🎧 Pilihan: '+s+' — tombol ini masih demo. Nanti bisa kita sambungkan ke Spotify/YouTube.';b.textContent='✓ Selected'}
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(x=>observer.observe(x));
+
+function vote(btn){
+  document.querySelectorAll('.vote').forEach(x=>x.style.borderColor='');
+  btn.style.borderColor='#d9ff63'; btn.style.color='#d9ff63';
+}
+
+function celebrate(){
+ const c=document.getElementById('confetti'),ctx=c.getContext('2d');
+ c.width=innerWidth;c.height=innerHeight;
+ const pieces=Array.from({length:100},()=>({x:innerWidth/2,y:innerHeight*.58,vx:(Math.random()-.5)*10,vy:-Math.random()*9-3,r:Math.random()*5+2,a:1}));
+ let t=0;
+ function frame(){
+   ctx.clearRect(0,0,c.width,c.height);t++;
+   pieces.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.18;p.a-=.008;ctx.globalAlpha=Math.max(0,p.a);ctx.fillStyle=['#d9ff63','#fff','#ffb86b','#b79cff'][Math.floor(Math.random()*4)];ctx.fillRect(p.x,p.y,p.r,p.r*2)});
+   if(t<130)requestAnimationFrame(frame);else ctx.clearRect(0,0,c.width,c.height);
+ }
+ frame();
+}
 </script>
 </body>
 </html>
