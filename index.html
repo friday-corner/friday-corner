@@ -92,6 +92,14 @@ body{background:var(--paper);}
 footer{padding-top:40px}
 @media(max-width:850px){.hero{padding-top:12px;grid-template-columns:1fr}.heroLeft{padding:55px 28px}.heroRight{border-radius:22px}.section{padding:65px 0}.inspiration{border-radius:22px}.inspireCopy{padding:40px 28px}.shoutLeft,.shoutRight{padding:40px 28px}.sound{border-radius:22px}}
 
+
+
+/* ===== FRIDAY FUN QUIZ — ADDITIVE FEATURE ONLY ===== */
+.funQuiz{background:#fff8df;border:2px solid var(--ink);padding:26px;display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;align-items:start}
+.funQuizIntro{background:var(--yellow);padding:22px;min-height:100%}.funQuizEyebrow{font-size:9px;font-weight:700;letter-spacing:.16em}.funQuizIntro h3{font:700 38px/.95 "Space Grotesk";letter-spacing:-.06em;margin:18px 0 12px}.funQuizIntro p{font-size:11px;line-height:1.65;margin:0;color:#343a40}.funQuizStamp{display:inline-block;border:1px solid var(--ink);padding:8px 10px;font-size:9px;font-weight:700;margin-top:20px;transform:rotate(-3deg)}
+.quizPlay{padding:4px 0}.quizProgress{display:flex;justify-content:space-between;gap:12px;font-size:9px;font-weight:700;letter-spacing:.08em;color:var(--muted);margin-bottom:14px}.quizQuestion{font:600 25px/1.15 "Space Grotesk";letter-spacing:-.04em;margin:0 0 18px}.quizAnswers{display:grid;gap:9px}.quizAnswer{width:100%;text-align:left;padding:13px 14px;border:1.5px solid var(--ink);background:#fff;font:500 12px "DM Sans";cursor:pointer;transition:background .15s,color .15s}.quizAnswer:hover:not(:disabled){background:#edf1fa}.quizAnswer:disabled{cursor:default}.quizAnswer.correct{background:#dcebdc;border-color:#317446}.quizAnswer.wrong{background:#f7ded5;border-color:#b94b31}.quizFeedback{min-height:38px;font-size:11px;line-height:1.5;color:var(--muted);padding-top:12px}.quizNext{border:0;background:var(--blue);color:#fff;padding:12px 16px;font-size:10px;font-weight:700;cursor:pointer;margin-top:6px}.quizNext:disabled{background:#b9bcbf;cursor:not-allowed}.quizResult{font:600 22px/1.2 "Space Grotesk";margin:0 0 10px}.quizHidden{display:none!important}
+@media(max-width:850px){.funQuiz{grid-template-columns:1fr;padding:15px;gap:16px}.funQuizIntro{min-height:0}.funQuizIntro h3{font-size:32px}.quizQuestion{font-size:22px}}
+
 </style>
 </head>
 <body>
@@ -197,6 +205,37 @@ footer{padding-top:40px}
 <section class="section lennaMini" id="lenna"><div class="sectionHead"><h2>06 — LENNA</h2><span>QUICK CATEGORY LOOKUP.</span></div><div class="lennaCard"><div class="lennaIcon">⌕</div><div class="lennaCopy"><h3>Find a Lenna Category</h3><p>Cari kategori Lenna saat handle chat, lalu cek deskripsinya di reference dashboard.</p></div><a class="lennaBtn" target="_blank" rel="noopener" href="https://datastudio.google.com/u/0/reporting/4e069cab-3cc0-4ef4-8b52-15f2bde14846/page/iJXbF?s=kqRKlEJtWic">OPEN LENNA REFERENCE →</a></div></section>
 
 <section class="section" id="shout"><div class="sectionHead"><h2>07 — MINI SHOUTOUT</h2><span>SAY SOMETHING NICE.</span></div><div class="shout"><div class="shoutLeft"><h2>WHO MADE<br>YOUR WEEK?</h2><p>Pilih satu orang yang minggu ini paling membantu, bikin semangat, atau sekadar bikin hari kerja jadi lebih enak.</p><a class="shoutBtn" target="_blank" rel="noopener" href="https://forms.gle/aB7zJ47aAvrMRyu8A">GIVE A SHOUTOUT ↗</a></div><div class="shoutRight"><div><h3>GOOD PEOPLE<br>MATTER.</h3><p>See you next Friday.</p></div></div></div></section>
+
+
+<section class="section" id="fun-quiz">
+  <div class="sectionHead"><h2>FRIDAY FUN QUIZ</h2><span>NO PRESSURE. JUST FOR FUN.</span></div>
+  <div class="funQuiz">
+    <div class="funQuizIntro">
+      <div class="funQuizEyebrow">A TINY BREAK FOR YOUR BRAIN</div>
+      <h3>READY FOR<br>A LITTLE FUN?</h3>
+      <p>Jawab 3 pertanyaan receh. Nggak ada ranking, nggak ada penilaian kerja—cuma hiburan kecil sebelum weekend.</p>
+      <div class="funQuizStamp">PLAY • LAUGH • REPEAT</div>
+    </div>
+    <div class="quizPlay" id="fcQuizPlay" aria-live="polite">
+      <div class="quizProgress"><span id="fcQuizCount">QUESTION 01 / 03</span><span id="fcQuizScore">SCORE: 0</span></div>
+      <h3 class="quizQuestion" id="fcQuizQuestion">Kenapa komputer suka kedinginan?</h3>
+      <div class="quizAnswers" id="fcQuizAnswers">
+        <button class="quizAnswer" type="button" data-answer="0">Karena kebanyakan buka Windows</button>
+        <button class="quizAnswer" type="button" data-answer="1">Karena lupa pakai jaket</button>
+        <button class="quizAnswer" type="button" data-answer="2">Karena AC kantor</button>
+      </div>
+      <div class="quizFeedback" id="fcQuizFeedback">Pilih satu jawaban. Santai aja 😄</div>
+      <button class="quizNext" id="fcQuizNext" type="button" disabled>NEXT QUESTION →</button>
+    </div>
+    <div class="quizPlay quizHidden" id="fcQuizResult" aria-live="polite">
+      <div class="quizProgress"><span>QUIZ COMPLETE</span><span id="fcQuizFinalScore">SCORE: 0 / 3</span></div>
+      <h3 class="quizResult" id="fcQuizResultTitle">Nice try!</h3>
+      <p class="quizFeedback" id="fcQuizResultText">Yang penting ikut ketawa.</p>
+      <button class="quizNext" id="fcQuizRestart" type="button">PLAY AGAIN ↻</button>
+    </div>
+  </div>
+</section>
+
 </main>
 <footer class="wrap"><span>FRIDAY/CORNER · CC TEAM</span><span>GOOD VIBES. GREAT PEOPLE.</span></footer>
 
@@ -220,5 +259,29 @@ choices.forEach(c=>c.addEventListener("click",()=>{if(hasVoted)return;selected=c
 async function loadResults(){try{const r=await fetch(API_URL+"?action=results&t="+Date.now(),{cache:"no-store"});if(!r.ok)throw new Error("GET "+r.status);const payload=await r.json();const votes=parseResults(payload);apiAvailable=true;render(votes);return votes;}catch(e){apiAvailable=false;const fallback=readFallback();render(fallback);return fallback;}}
 btn.addEventListener("click",async()=>{if(!selected||hasVoted)return;const choice=selected;const fallback=readFallback();fallback[choice]=(Number(fallback[choice])||0)+1;saveFallback(fallback);render(fallback);btn.disabled=true;btn.textContent="VOTING…";try{await fetch(API_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/x-www-form-urlencoded;charset=UTF-8"},body:"choice="+encodeURIComponent(choice)});localStorage.setItem(VOTED_KEY,"1");localStorage.setItem(CHOICE_KEY,choice);markVoted(choice);setTimeout(loadResults,900);}catch(e){localStorage.setItem(VOTED_KEY,"1");localStorage.setItem(CHOICE_KEY,choice);markVoted(choice);}});
 (async()=>{const saved=localStorage.getItem(VOTED_KEY)==="1", choice=localStorage.getItem(CHOICE_KEY)||"";if(saved)markVoted(choice);await loadResults();})();
+
+
+/* ===== FRIDAY FUN QUIZ SCRIPT — INDEPENDENT FROM EXISTING POLL ===== */
+(()=>{
+  const questions=[
+    {q:'Kenapa komputer suka kedinginan?',a:['Karena kebanyakan buka Windows','Karena lupa pakai jaket','Karena AC kantor'],correct:0,why:'Betul! Kebanyakan buka Windows, jadi masuk angin digital. 😄'},
+    {q:'Kalau Senin punya musuh bebuyutan, siapa?',a:['Hari Selasa','Alarm pagi','Printer kehabisan tinta'],correct:1,why:'Alarm pagi memang sering jadi villain utama. ⏰'},
+    {q:'Apa yang paling cepat menyebar di kantor?',a:['Email meeting','Aroma kopi','Kabar ada makanan gratis'],correct:2,why:'Kabar makanan gratis biasanya lebih cepat dari koneksi internet. 🍩'}
+  ];
+  const play=document.getElementById('fcQuizPlay');
+  if(!play)return;
+  const result=document.getElementById('fcQuizResult'),count=document.getElementById('fcQuizCount'),scoreLabel=document.getElementById('fcQuizScore'),question=document.getElementById('fcQuizQuestion'),answers=document.getElementById('fcQuizAnswers'),feedback=document.getElementById('fcQuizFeedback'),next=document.getElementById('fcQuizNext');
+  let index=0,score=0,answered=false;
+  function renderQuestion(){
+    answered=false;const item=questions[index];count.textContent='QUESTION '+String(index+1).padStart(2,'0')+' / '+String(questions.length).padStart(2,'0');scoreLabel.textContent='SCORE: '+score;question.textContent=item.q;answers.innerHTML='';
+    item.a.forEach((label,i)=>{const b=document.createElement('button');b.type='button';b.className='quizAnswer';b.textContent=String.fromCharCode(65+i)+'. '+label;b.addEventListener('click',()=>choose(i,b));answers.appendChild(b);});
+    feedback.textContent='Pilih satu jawaban. Santai aja 😄';next.disabled=true;next.textContent=index===questions.length-1?'SEE MY RESULT →':'NEXT QUESTION →';
+  }
+  function choose(choice,button){if(answered)return;answered=true;const item=questions[index];[...answers.querySelectorAll('button')].forEach((b,i)=>{b.disabled=true;if(i===item.correct)b.classList.add('correct');});if(choice===item.correct){score++;feedback.textContent=item.why;}else{button.classList.add('wrong');feedback.textContent='Belum tepat! '+item.why;}scoreLabel.textContent='SCORE: '+score;next.disabled=false;}
+  next.addEventListener('click',()=>{if(!answered)return;if(index<questions.length-1){index++;renderQuestion();}else{play.classList.add('quizHidden');result.classList.remove('quizHidden');document.getElementById('fcQuizFinalScore').textContent='SCORE: '+score+' / '+questions.length;document.getElementById('fcQuizResultTitle').textContent=score===3?'QUIZ MASTER! 🏆':score===2?'SOLID SCORE! ✨':'GOOD VIBES WIN! 😄';document.getElementById('fcQuizResultText').textContent=score===3?'Sempurna! Kayaknya kamu butuh tantangan yang lebih receh.':score===2?'Hampir sempurna. Lumayan buat pemanasan weekend!':'Nggak apa-apa, ini cuma kuis receh. Yang penting weekend tetap cerah!';}});
+  document.getElementById('fcQuizRestart').addEventListener('click',()=>{index=0;score=0;result.classList.add('quizHidden');play.classList.remove('quizHidden');renderQuestion();});
+  renderQuestion();
+})();
+
 </script>
 </body></html>
